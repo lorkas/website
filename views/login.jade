@@ -1,0 +1,38 @@
+#login-form
+  .tabs
+    .title
+      a.button.login.active(data-shows=".login") Login
+      a.button.register(data-shows=".register") Register
+    .login.content
+      label Log in or register with:
+      include oauth_links
+
+      label Or log in here:
+      form(name="login", method="post", action="/auth/login")
+        label.register
+        label.input Email:
+          input(name="login[email]", type="text")
+        label.input Password:
+          input(name="login[password]", type="password")
+        label Remember me
+          input(name="login[rememberMe]", type="checkbox")
+        input(type="submit", value="Login")
+
+    .register.content
+      label Register with OpenID
+      include oauth_links
+
+      label Or do it the slow way
+      form(name="register", method="post", action="/auth/register")
+        label.register
+        label.input Email:
+          input(name="register[email]", type="text")
+        label.input Password:
+          input(name="register[password]", type="password")
+        label.input Name:
+          input(name="register[name]", type="text")
+        label.input Position
+          input(name="register[position]", type="text", value="Performer")
+        label.input A short bio:
+          input(name="register[position]", type="text")
+        input(type="submit", value="Register")

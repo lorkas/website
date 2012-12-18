@@ -1,0 +1,45 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.0.4"
+   ,"passport": "x"
+
+   ,"jade": "*"
+   ,"nib": "x"
+   ,"stylus": "x"
+
+   ,"async": "x"
+   ,"bcrypt": "x"
+   ,"coffee-script": "*"
+   ,"colors": "x"
+   ,"connect-coffee-script": "x"
+   ,"connect-mongo": "x"
+   ,"ender": "x"
+   ,"mongoose": "x"
+   ,"underscore": "x"
+  },
+  "scripts": {
+    "start": "coffee app.coffee"
+  },
+  "volo": {
+    "baseDir": "public/scripts/libs",
+    "dependencies": {
+      "domready": "github:ded/domready/master",
+      "bean": "github:fat/bean/v1.0.2",
+      "bonzo": "github:ded/bonzo/v1.0.0",
+      "underscore": "github:documentcloud/underscore/1.4.3",
+      "upload": "github:amccollum/upload/master",
+      "traversty": "github:rvagg/traversty/master",
+      "Radio": "github:uxder/Radio/v0.2.0",
+      "moment": "github:timrwood/moment/1.7.2",
+      "eventify": "github:bermi/eventify/master",
+      "drag": "github:logicalparadox/drag.js/0.0.4",
+      "FitText": "github:davatron5000/FitText.js/master",
+      "Lettering": "github:davatron5000/Lettering.js/v0.6.1",
+      "require": "github:jrburke/requirejs/2.1.2",
+      "raphael": "github:metacommunications/raphael/v2.1.0"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import functions
+
+.block
+  display block
+  .block
+    display inline-block
+  position relative
+
+  background-color rgba(0,0,0,.05)
+  border solid 1px rgba(0,0,0,.6)
+  border-radius 5px
+
+  padding .1em .3em
+  margin .2em .2em
+
+  label
+    position absolute
+    top -10px
+    left -10px
+    line-height .8em
+    font-size .8em
+    background-color rgba(200,200,200,.9)
+    padding 3px 4px
+    border-radius 3px
+    border solid black 1px
+
+  .feet label
+    text-align center
+
+.block-list
+  @extend .block
+  padding-left 5px
+  padding 3px
+  .block
+  float left
+  clear both
+    ul
+      clearfix()
+      margin-left .8em
+      padding-left 1em
+      border-left groove 1px rgba(0,0,0,.7)
+
+.plain-block
+  display inline-block
+  vertical-align top
+  margin 1em
+  padding .5em 1em .6em .5em
+  outline solid 1px rgba(0,0,0,.3)
+  background-color rgba(0,0,0,.1)
+
+.done
+  tag 'done', rgba(0,0,0,.6), #bbf
+.easy
+  tag 'easy', rgba(100, 255, 120, .3)
+.hard
+  tag 'hard', rgba(100, 0, 0, .2)
+
+ul.roadmap
+  font-size initial
+  padding-left 0
+  margin-left 0
+  li
+    list-style-type gujarati
+    list-style-position inside
+
+    display inline-block
+    float left
+    clear both
+    position relative
+
+    background-color rgba(0,0,0,.05)
+    border solid 1px rgba(0,0,0,.6)
+    border-radius 5px
+
+    padding 3px
+    padding-left 5px
+    ul
+      clearfix()
+      margin-left .8em
+      padding-left 1em
+      border-left groove 1px rgba(0,0,0,.7)

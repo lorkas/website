@@ -1,0 +1,25 @@
+extends standard_page
+block content
+  #members
+    h4 Preview:
+    .person
+      .top
+        .name= user.name
+        - if(user.website)
+          a.website(href="#{person.website}")
+      .labels
+        - if(user.position)
+          .position= user.position
+      - if(user.bio)
+        .bio= user.bio
+
+  .user
+    | #{user.email}
+    | #{user.name}
+    | #{user.position}
+    | #{user.website}
+    | #{user.bio}
+  
+  a.edit Double click a field to make changes.
+
+

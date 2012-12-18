@@ -1,0 +1,18 @@
+.page-title
+  .content
+    .title
+      .spacer
+      a(href="/"): img.logo(src="/images/logo.jpeg")
+    .user
+      .spacer
+      - if(typeof user !== 'undefined' && user !== null)
+        .account
+          a.button(href="/myacct") Logged in 
+            - if(user.name)
+              | as #{user.name}
+          .logout: a(href="/logout") Logout
+      - else
+        .account
+          .show-login.button Login
+          include login
+

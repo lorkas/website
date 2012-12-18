@@ -1,0 +1,8 @@
+{
+  "volo": {
+    "dependencies": {
+      "qwery": "github:ded/qwery/v1.0.1",
+      "raphael": "github:DmitryBaranovskiy/raphael/v2.1.0"
+    }
+  }
+}

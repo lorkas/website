@@ -1,0 +1,30 @@
+extends standard_page 
+block content
+  mixin person(person)
+    .person
+      .top
+        .name= person.name
+        - if(person.website)
+          a.website(href="#{person.website}")
+        - if(person.position)
+          .position= person.position
+      .labels
+      - if(person.bio)
+        .bio= person.bio
+
+  #members
+    h2 Current Members
+    - for member in people.members
+      mixin person(member)
+
+    h2 Alumni
+    - for alum in people.alumni
+      mixin person(alum)
+
+    h2 Moral Support
+    - for support in people['Moral Support']
+      mixin person(support)
+
+    h2 Contributors
+    - for contributor in people['Contributors']
+      mixin person(contributor)

@@ -1,0 +1,66 @@
+This is an explanation of all the packages used.
+All the server packages are in package.json, they are installed and updated by npm.
+All the client packages are in public/scripts. They are manually maintained. Something to automate this would be nice, but no biggie.
+
+Framework:
+  express
+    the framework for the whole site - the most popular one for node.js
+    Good api documentation: http://expressjs.com/
+    Express uses connect middleware - all the app.use stuff is middleware.
+    Connect docs are at: www.senchalabs.org/connect/
+  passport
+    it's what lets us use google, facebook, s.o., etc for logins.
+  bcrypt
+    for password hashing
+  connect-mongo
+    Use mongodb as a session store.
+UI:
+  jade
+    So much nicer than html. 
+    Their github page has all the docs: https://github.com/visionmedia/jade - their actual website sucks.
+  stylus
+    It makes css not suck as bad.
+    http://learnboost.github.com/stylus/
+  nib
+    Extensions for stylus.
+    http://visionmedia.github.com/nib/
+
+Programming:
+  coffee-script
+    Uncomplicated javascript. It compiles into javascript, and is soo much easier to read and write.
+    Great docs, and the "Try Coffeescript" thing is VERY useful.
+    http://coffeescript.org
+  colors
+    So you can console.log things in color. e.g. console.log "I'm thinking of something orange!".orange
+  async
+    For asynchronous flow control. There's billions and billions of libs to do this, but I like async the best.
+    Node uses asynch design patterns instead of threads. If you're reading or writing to disk or sending stuff over a network, you use pipes (preferred) or async (not bad).
+    https://github.com/caolan/async
+  underscore
+    Functional programming for javascript.
+  connect-coffee-script
+    It just makes using coffeescript easier.
+
+
+
+
+
+Things I may pull in later, as needed:
+  UI:
+    bifocals
+      View library with support for asynchronous sub-views (aka partials) and interchangeable rendering systems.
+    morpheus
+      animations
+    jquerypp
+      jquery supplement
+  Account:
+    request
+      HTTP request client (get, put, post..) e.g. for oauth
+
+  Progamming:
+    one
+      convert node.js packages for the client. Like browserify, but I think this is better.
+    bilby
+      hardcore functional lib
+
+

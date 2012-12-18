@@ -1,0 +1,13 @@
+//-
+  This is for content based pages, with a regular width, title, navbar, etc. Applications should inherit
+  from layout.
+
+extends layout
+
+block page
+  include header
+  #center
+    h1.title= title
+    #navigation: include navigation
+    #content: block content
+  #footer: include footer

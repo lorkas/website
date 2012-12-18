@@ -1,0 +1,108 @@
+@import functions
+
+// http://lea.verou.me/2012/04/background-attachment-local/
+
+// http://www.javascriptkit.com/dhtmltutors/cssmediaqueries.shtml
+// smallPage()
+//   &
+//     @media (max-width: 480px)
+
+// smallPage()
+//   div
+//     background-color blue
+
+// nifty styles here:
+// http://vertx.io/
+
+border-color = rgba(20,80,100,.5)
+border = solid 1px border-color
+corner-rounding = 6px
+content-width = 1000px
+nav-width = 170px
+font-color = #222
+
+html
+  height 100%
+  margin 0
+  padding 0
+  border 0
+  outline 0
+
+a, .button
+  cursor pointer
+  text-decoration none
+  color #007
+  &:hover
+    text-decoration underline
+    color #44c
+
+h1, h2, h3, h4, h4, h6
+  font-weight 100
+  margin 0
+  color black
+h1
+  font-size 1.7em
+p
+  margin-top 0
+
+.icon svg
+  width 30px
+  height 30px
+
+body
+  @extends html
+  background-color white
+  font 1em/1.4 Corbel,'Helvetica Neue',Helvetica,Arial,sans-serif
+  color #222
+  // font normal 1em sans-serif
+  font-weight lighter
+
+@import header
+@import footer
+
+#center
+  box-shadow( 0 0 8000px -100px rgba(90,150,200,.5))
+  min-height 80%
+  border border
+  position relative
+  background-color #fff
+  width content-width
+  margin 1em auto
+  border-radius corner-rounding
+  clearfix()
+  & >
+    h1.title
+      border-bottom border
+      padding .3em 3em
+      width 35%
+      margin-bottom 1em
+    #navigation
+      absolute left
+      vertical-align top
+      display inline-block
+      width nav-width
+      text-align center
+      & > #nav
+        display inline-block
+        text-align left
+        background white
+        & > a
+          display block
+          white-space nowrap
+
+    #content
+      float right
+      display inline-block
+      width content-width - nav-width - 18
+      margin 0 15px 1em 0
+
+.lorkas-links
+  width 100%
+  .find-us
+    margin-top 1em
+    font-size small
+  & > a
+    margin-right 20%
+    & > svg
+      width 25px
+      height 25px

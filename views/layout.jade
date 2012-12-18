@@ -1,0 +1,18 @@
+//-
+  http://www.formstack.com/the-anatomy-of-a-perfect-landing-page
+  http://pinterest.com/pin/288934132313047927/
+  For performances: http://pinterest.com/pin/30117891228368694/
+
+doctype 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="scripts/libs/head.js")
+    - if(typeof entry !== 'undefined' && entry !== null)
+      script(src="#{entry}")
+    - else
+      script(src="scripts/app/entry.js")
+  body
+    block page

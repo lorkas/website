@@ -1,0 +1,555 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+a,
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  color: #007;
+}
+a:hover,
+.button:hover {
+  text-decoration: underline;
+  color: #44c;
+}
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+  font-weight: 100;
+  margin: 0;
+  color: #000;
+}
+h1 {
+  font-size: 1.7em;
+}
+p {
+  margin-top: 0;
+}
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+body {
+  background-color: #fff;
+  font: 1em/1.4 Corbel, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #222;
+  font-weight: lighter;
+}
+.page-title {
+  border: solid 1px rgba(20,80,100,0.5);
+  border-top: none;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  z-index: 100;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0 30px;
+  min-width: 940px;
+  max-width: 1200px;
+  position: relative;
+}
+.page-title > .content {
+  display: block;
+  margin: 0 auto;
+  max-width: 1000px;
+  height: 4em;
+  position: relative;
+}
+.page-title > .content > * {
+  height: 100%;
+}
+.page-title > .content > * > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.page-title > .content .spacer {
+  height: 100%;
+}
+.page-title > .content .account #login-form {
+  display: none;
+  position: absolute;
+  right: 0;
+  ((null)): 0;
+  background-color: #fff;
+  border: solid 1px rgba(20,80,100,0.5);
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  padding: 1em 1.5em;
+}
+.page-title > .content .account #login-form .oauth > label {
+  display: block;
+}
+.page-title > .content .account #login-form .oauth > a {
+  text-align: center;
+  display: inline-block;
+  width: 31%;
+}
+.page-title > .content .account #login-form form label {
+  white-space: nowrap;
+  display: block;
+  margin: 0.1em;
+}
+.page-title > .content .account #login-form form label input {
+  display: inline-block;
+  margin: 0 0 0 1em;
+  padding: 0.3em;
+  border: solid 1px rgba(20,80,100,0.5);
+  width: 15em;
+  height: 0.9em;
+  line-height: 0.9em;
+  font-size: 0.9em;
+  font: inherit;
+}
+.page-title > .content .account #login-form form label.input {
+  text-align: right;
+}
+.page-title > .content .account .logout {
+  position: absolute;
+  right: 0;
+  ((null)): 0;
+  line-height: 0.9em;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+.page-title > .content .logo {
+  width: 100px;
+  margin: 0;
+  border: none;
+}
+.page-title > .content .user {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.tabs {
+  position: relative;
+}
+.tabs > .title {
+  border-bottom: solid 1px rgba(20,80,100,0.5);
+  padding-left: 0.8em;
+}
+.tabs > .title .button {
+  display: inline-block;
+  padding: 0 0.8em;
+}
+.tabs > .title .button.active {
+  border: solid 1px rgba(20,80,100,0.5);
+  border-bottom: none;
+  -webkit-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.tabs > .content {
+  position: relative;
+}
+#footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+#footer #footer-contents {
+  text-align: right;
+  font-size: small;
+  color: rgba(0,0,0,0.8);
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+#footer #footer-contents a {
+  font-weight: bold;
+}
+#center {
+  -moz-box-shadow: 0 0 8000px -100px rgba(90,150,200,0.5);
+  -webkit-box-shadow: 0 0 8000px -100px rgba(90,150,200,0.5);
+  box-shadow: 0 0 8000px -100px rgba(90,150,200,0.5);
+  min-height: 80%;
+  border: solid 1px rgba(20,80,100,0.5);
+  position: relative;
+  background-color: #fff;
+  width: 1000px;
+  margin: 1em auto;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  zoom: 1;
+}
+#center:before,
+#center:after {
+  content: "";
+  display: table;
+}
+#center:after {
+  clear: both;
+}
+#center > h1.title {
+  border-bottom: solid 1px rgba(20,80,100,0.5);
+  padding: 0.3em 3em;
+  width: 35%;
+  margin-bottom: 1em;
+}
+#center > #navigation {
+  position: absolute;
+  left: 0;
+  ((null)): 0;
+  vertical-align: top;
+  display: inline-block;
+  width: 170px;
+  text-align: center;
+}
+#center > #navigation > #nav {
+  display: inline-block;
+  text-align: left;
+  background: #fff;
+}
+#center > #navigation > #nav > a {
+  display: block;
+  white-space: nowrap;
+}
+#center > #content {
+  float: right;
+  display: inline-block;
+  width: 812px;
+  margin: 0 15px 1em 0;
+}
+.lorkas-links {
+  width: 100%;
+}
+.lorkas-links .find-us {
+  margin-top: 1em;
+  font-size: small;
+}
+.lorkas-links > a {
+  margin-right: 20%;
+}
+.lorkas-links > a > svg {
+  width: 25px;
+  height: 25px;
+}
+.block,
+.block-list {
+  display: block;
+  position: relative;
+  background-color: rgba(0,0,0,0.05);
+  border: solid 1px rgba(0,0,0,0.6);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0.1em 0.3em;
+  margin: 0.2em 0.2em;
+}
+.block .block,
+.block-list .block {
+  display: inline-block;
+}
+.block label,
+.block-list label {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  line-height: 0.8em;
+  font-size: 0.8em;
+  background-color: rgba(200,200,200,0.9);
+  padding: 3px 4px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: solid #000 1px;
+}
+.block .feet label,
+.block-list .feet label {
+  text-align: center;
+}
+.block-list {
+  padding-left: 5px;
+  padding: 3px;
+}
+.block-list .block ul,
+.block-list float left ul,
+.block-list clear both ul {
+  zoom: 1;
+  margin-left: 0.8em;
+  padding-left: 1em;
+  border-left: groove 1px rgba(0,0,0,0.7);
+}
+.block-list .block ul:before,
+.block-list float left ul:before,
+.block-list clear both ul:before,
+.block-list .block ul:after,
+.block-list float left ul:after,
+.block-list clear both ul:after {
+  content: "";
+  display: table;
+}
+.block-list .block ul:after,
+.block-list float left ul:after,
+.block-list clear both ul:after {
+  clear: both;
+}
+.plain-block {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+  padding: 0.5em 1em 0.6em 0.5em;
+  outline: solid 1px rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.1);
+}
+.done:after {
+  color: #bbf;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.6);
+  border: solid 1px rgba(0,0,0,0.6);
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  -moz-box-shadow: inset;
+  -webkit-box-shadow: inset;
+  box-shadow: inset;
+  content: 'done';
+  margin: auto 0.3em;
+  font-size: 0.8em;
+  padding: 0.1em 0.5em;
+  text-align: center;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  vertical-align: middle;
+}
+.easy:after {
+  display: inline-block;
+  background-color: rgba(100,255,120,0.3);
+  border: solid 1px rgba(0,0,0,0.6);
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  -moz-box-shadow: inset;
+  -webkit-box-shadow: inset;
+  box-shadow: inset;
+  content: 'easy';
+  margin: auto 0.3em;
+  font-size: 0.8em;
+  padding: 0.1em 0.5em;
+  text-align: center;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  vertical-align: middle;
+}
+.hard:after {
+  display: inline-block;
+  background-color: rgba(100,0,0,0.2);
+  border: solid 1px rgba(0,0,0,0.6);
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  -moz-box-shadow: inset;
+  -webkit-box-shadow: inset;
+  box-shadow: inset;
+  content: 'hard';
+  margin: auto 0.3em;
+  font-size: 0.8em;
+  padding: 0.1em 0.5em;
+  text-align: center;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  vertical-align: middle;
+}
+ul.roadmap {
+  font-size: initial;
+  padding-left: 0;
+  margin-left: 0;
+}
+ul.roadmap li {
+  list-style-type: gujarati;
+  list-style-position: inside;
+  display: inline-block;
+  float: left;
+  clear: both;
+  position: relative;
+  background-color: rgba(0,0,0,0.05);
+  border: solid 1px rgba(0,0,0,0.6);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 3px;
+  padding-left: 5px;
+}
+ul.roadmap li ul {
+  zoom: 1;
+  margin-left: 0.8em;
+  padding-left: 1em;
+  border-left: groove 1px rgba(0,0,0,0.7);
+}
+ul.roadmap li ul:before,
+ul.roadmap li ul:after {
+  content: "";
+  display: table;
+}
+ul.roadmap li ul:after {
+  clear: both;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+#members .person {
+  margin-bottom: 1em;
+  display: inline-block;
+  width: 28%;
+  height: 15em;
+  padding: 0.5em;
+  margin: 0.4em 0.5em;
+  border-top: solid 1px rgba(20,80,100,0.5);
+  border-left: solid 1px rgba(20,80,100,0.5);
+  border-right: none;
+  border-bottom: none;
+  vertical-align: top;
+  overflow: hidden;
+}
+#members .person .top,
+#members .person .labels,
+#members .person .bio {
+  position: relative;
+}
+#members .person .top > *,
+#members .person .labels > *,
+#members .person .bio > * {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+#members .person .top .name {
+  font-size: 1.1em;
+  display: inline-block;
+}
+#members .person .top a.website {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+#members .person .top a.website svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#members .person .labels .position {
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+a.not-found {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 10000;
+}
+a.not-found > * {
+  display: inline-block;
+  position: relative;
+}
+a.not-found > .spacer {
+  height: 100%;
+  vertical-align: middle;
+  width: 0px;
+}
+a.not-found > .text {
+  color: #fff;
+  font-size: 3em;
+  text-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.2);
+  vertical-align: text-bottom;
+}
+a.not-found > .text:hover {
+  color: #fff;
+}

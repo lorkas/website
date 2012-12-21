@@ -15,10 +15,32 @@ tag(name, color, font = null)
     text-shadow 1px 1px rgba(0,0,0,.1)
     vertical-align middle
 
-
-box-shadow(shadow)
+box-shadow()
   // http://www.css3.info/preview/box-shadow/
-  -moz-box-shadow shadow
-  -webkit-box-shadow shadow
-  box-shadow shadow
+  -webkit-box-shadow arguments
+  -moz-box-shadow arguments
+  box-shadow arguments
+
+min-height(v)
+  min-height v
+  height auto !important
+  height v
+
+opacity(n, support-for-ie = true)
+  -khtml-opacity n
+  -moz-opacity n
+  opacity n
+  if support-for-ie
+    -ms-filter unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')"')
+    filter unquote('alpha(opacity=' + round(n * 100) + ')')
+
+transform(args...)
+  -moz-transform args
+  -webkit-transform args
+  -o-transform args
+  -khtml-transform args
+
+size(width, height = width)
+  width width
+  height height
 

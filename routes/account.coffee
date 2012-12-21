@@ -12,19 +12,15 @@ module.exports = (app) ->
     User.getAuthenticated login.email, login.password, (err, user, reason) ->
       throw err if err
       if user?
-        req.session.user = user
-        req.session.save()
-        res.redirect 'back'
+        req.login user, -> res.redirect 'back'
       else
         reasons = User.failedLogin
         switch reason
           when reasons.NOT_FOUND, reasons.PASSWORD_INCORRECT
-            # note: these cases are usually treated the same - don't tell
-            # the user *why* the login failed, only that it did
+            # note: these cases are usually treated the same - don't tell the user *why* the login failed, only that it did
             console.log reason
           when reasons.MAX_ATTEMPTS
-            # send email or otherwise notify user that account is
-            # temporarily locked
+            # send email or otherwise notify user that account is temporarily locked
             console.log reason
         res.redirect 'back'
 
@@ -47,6 +43,6 @@ module.exports = (app) ->
         console.log u, user
         user.save (err, user) ->
           return res.send "Error saving new user" if err
-          req.session.user = user
+          # req.session.user = user
           res.redirect '/myacct'
 

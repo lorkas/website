@@ -18,11 +18,7 @@ UserSchema = new mongoose.Schema
   bio: String
   position: [String]
 
-  oauth:
-    github: {}
-    facebook: {}
-    google: {}
-
+  oauth: []
 
 UserSchema.virtual('isLocked').get ->
     # check for a future lockUntil timestamp

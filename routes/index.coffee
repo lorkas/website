@@ -5,32 +5,15 @@ members = require "#{process.cwd()}/server/members"
 
 module.exports = (app) ->
 
-  app.get '*', (req, res, next) ->
-    if not req.session.user? and req.session.auth?.loggedIn
-      auth = req.session.auth
-      _.find ['google', 'facebook', 'github'], (name) ->
-        return false unless auth[name]
-        a = {}
-        a['ouath.'+auth[name]+'.id'] = auth[name].id
-        if a?
-          User.findOne(a).exec (err, user) ->
-            req.session.user = user
-            req.session.save()
-            res.locals.user = user
-            next()
-          return true
-        else
-          next()
-          return true
-    else
-      user = req.session.user
-      res.locals.user = user
-      next()
-
   app.get '/d', (req, res, next) -> debugger
+
   require('./account') app
   # require('./openid') app
   
+  app.get '*', (req, res, next) ->
+    res.locals.user = req.user if req.user?
+    next()
+
   app.get '/',              (req, res) -> res.render 'index',         title: 'About LOrkAS'
   app.get '/roadmap',       (req, res) -> res.render 'roadmap',       title: 'roadmap'
   app.get '/people',        (req, res) -> res.render 'people',        short: 'People of LOrkAS', title: 'The People of LOrkAS', people: members

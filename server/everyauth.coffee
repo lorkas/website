@@ -19,7 +19,6 @@ everyauth.everymodule.configure
       else
         res.redirect 'back'
 
-
 everyauth.facebook.configure
   appId: config.facebook.appId
   appSecret: config.facebook.appSecret

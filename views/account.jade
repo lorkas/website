@@ -1,7 +1,21 @@
 extends standard_page
 block content
+  .edit Click on a field to make changes.
+  .user
+    .name #{user.name}
+    .email #{user.email}
+    .position #{user.position}
+    .website #{user.website}
+    .bio #{user.bio}
+    .oauth
+    each account in user.oauth
+      .account
+        span.provider #{account.provider}
+        span.unlink Unlink this account
+  
+  //- Make this update live as they edit the fields:
+  h4 Preview:
   #members
-    h4 Preview:
     .person
       .top
         .name= user.name
@@ -13,13 +27,4 @@ block content
       - if(user.bio)
         .bio= user.bio
 
-  .user
-    | #{user.email}
-    | #{user.name}
-    | #{user.position}
-    | #{user.website}
-    | #{user.bio}
-  
-  a.edit Double click a field to make changes.
-
-
+  a.button.save Save

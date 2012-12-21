@@ -5,6 +5,7 @@ express = require 'express'
 http = require 'http'
 mongoose = require 'mongoose'
 nib = require 'nib'
+passport = require 'passport'
 path = require 'path'
 routes = require './routes'
 stylus = require 'stylus'
@@ -17,7 +18,6 @@ db = mongoose.connect 'local.host', 'lorkas'
 # db.once 'open', (args...) ->
 #   console.log 'db open', args...
 
-everyauth = require './server/everyauth'
 
 # Set up the app
 app.configure ->
@@ -34,17 +34,19 @@ app.configure ->
 
   app.use express.bodyParser()
   app.use express.methodOverride()
-  app.use express.static path.join __dirname, 'public'
   app.use express.cookieParser 'make this a random thing!'
   app.use express.session
     secret: 'make this a random thing!'
     store: new MongoStore
       mongoose_connection: db.connections[0]
+  app.use express.static path.join __dirname, 'public'
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'
-  app.use everyauth.middleware()
+  app.use passport.initialize()
+  app.use passport.session()
   app.use app.router
 
+require('./server/passport') app, passport
 
 
 # This is only used while developing

@@ -10,6 +10,8 @@ Framework:
     Connect docs are at: www.senchalabs.org/connect/
   passport
     it's what lets us use google, facebook, s.o., etc for logins.
+  passport-*
+    adapters for different oauth providers. passport-local is not for oauth, but just so local logins go through the same, easy interface.
   bcrypt
     for password hashing
   connect-mongo

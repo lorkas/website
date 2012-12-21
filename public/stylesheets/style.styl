@@ -2,15 +2,12 @@
 @import layout
 @import objects
 
-global-reset()
-
 #members
   .person
     margin-bottom 1em
     display inline-block
 
-    width 28%
-    height 15em
+    size 28% 15em
     padding .5em
     margin .4em .5em
     border-top border
@@ -34,12 +31,10 @@ global-reset()
       a.website
         position relative
         display inline-block
-        width 20px
-        height 20px
+        size 20px
         svg
           absolute top left
-          width 100%
-          height 100%
+          size 100%
 
     .labels
       .position
@@ -49,8 +44,7 @@ global-reset()
 
 a.not-found
   fixed top left
-  width 100%
-  height 100%
+  size 100%
   text-align center
   background-color rgba(0,0,0,.7)
   z-index 10000
@@ -59,9 +53,8 @@ a.not-found
       display inline-block
       position relative
     .spacer
-      height 100%
+      size 0px 100%
       vertical-align middle
-      width 0px
     .text
       color white
       &:hover

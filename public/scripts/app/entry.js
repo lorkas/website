@@ -12,7 +12,7 @@
   }, {
     icons: libs + 'icons.js'
   }, {
-    "_": libs + 'underscore.js'
+    "_": libs + 'lodash.js'
   }, {
     keys: app + 'vimkeys.js'
   });

@@ -6,7 +6,7 @@ do ->
     { raphael:  libs+"raphael.js" }
     { jquery:   libs+"jquery.js" }
     { icons:    libs+'icons.js'}
-    { "_":      libs+'underscore.js' }
+    { "_":      libs+'lodash.js' }
     { keys:     app+'vimkeys.js' }
   )
 

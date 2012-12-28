@@ -1,30 +1,49 @@
 extends standard_page
 block content
-  .edit Click on a field to make changes.
-  .user
-    .name #{user.name}
-    .email #{user.email}
-    .position #{user.position}
-    .website #{user.website}
-    .bio #{user.bio}
+  #account
+    .edit Click on a field to make changes.
+    .user
+      h4 Profile information
+      .name.input
+        .label Name
+        .value #{user.name}
+      .email.input
+        .label Email
+        .value #{user.email}
+      .position.input
+        .label Position
+        .value #{user.position}
+      .website.input
+        .label Website
+        .value #{user.website}
+        a(href="#{user.website}")
+      .bio.input
+        .label Biography
+        .value #{user.bio}
     .oauth
-    each account in user.oauth
-      .account
-        span.provider #{account.provider}
-        span.unlink Unlink this account
-  
-  //- Make this update live as they edit the fields:
-  h4 Preview:
-  #members
-    .person
-      .top
-        .name= user.name
-        - if(user.website)
-          a.website(href="#{person.website}")
-      .labels
-        - if(user.position)
-          .position= user.position
-      - if(user.bio)
-        .bio= user.bio
+      h4 Login information
+      .link-account
+        h5 Link to a new account
+        .description This lets you login without remembering your lorkas username and password.
+        include oauth_links
+      each account in user.oauth
+        .account
+          span.provider #{account.provider} #{account.username || account._json.email }
+          a(href="/auth/unlink/#{account.provider}/#{account.id || account.json.email }").unlink x
+    
+    //- Make this update live as they edit the fields:
+    //-
+      h4 Preview:
+      #members
+        .person
+          .top
+            .name= user.name
+            - if(user.website)
+              a.website(href="#{person.website}")
+          .labels
+            - if(user.position)
+              .position= user.position
+          - if(user.bio)
+            .bio= user.bio
 
-  a.button.save Save
+    a.button.save Save

@@ -1,4 +1,6 @@
 #nav
+  - if(typeof user !== 'undefined' && user !== null)
+    a.account(href="/account") My Account
   a(href="/") About LOrkAS
   a(href="/people") People of LOrkAS
   a(href="/performances") Performances

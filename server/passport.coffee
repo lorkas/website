@@ -17,7 +17,7 @@
 ###
 
 async = require 'async'
-_ = require 'underscore'
+_ = require 'lodash'
 mongoose = require 'mongoose'
 Schema = mongoose.Schema
 
@@ -28,12 +28,14 @@ url = "http://localhost:3100"
 passport = require 'passport'
 
 ###
-#  Set up authorizations
+#  Set up overall strategies
 ###
+
+# Serialize and deserialize a user based on their user id
 passport.serializeUser (user, next) -> next null, user.id
 passport.deserializeUser (id, next) -> User.findById id, next
 
-
+# This is the callback to validate oauth logins
 validateUser = (req, accessToken, refreshToken, profile, next) ->
   User.findOne { oauth: { $elemMatch: { id: profile.id }}}, (err, foundUser) ->
     loggedIn = req.user
@@ -44,33 +46,43 @@ validateUser = (req, accessToken, refreshToken, profile, next) ->
       req.login foundUser, next
     # If the foundUser is logged in and the oauth acct isn't already associated with someone, add the account.
     else if loggedIn and not foundUser
-      console.log "Adding account".blue
-      loggedIn.oauth.push profile
-      loggedIn.save next
+      res.redirect "/account/oauth-associate"
+      # loggedIn.oauth.push profile
+      # loggedIn.save next
     # If the foundUser is not logged in and the oauth account is not associated with someone, register it
     else if not loggedIn and not foundUser
+      res.redirect "/account/register"
       throw "NIY - make a page redirect to do this!!!".red
     # If the foundUser is logged in and the oauth acct IS already associated with an account
     else if loggedIn and foundUser
       # If it's the same one, just ignore it
       if loggedIn.id is foundUser.id
         console.log "ignoring, they're the same foundUser."
+        next()
       # If it's a different one, be like wtf you need to disassociate your other account before adding to this
       else
-        console.log "This should not happen >> handle it!!"
+        console.log err = "This should not happen >> handle it!!"
+        next err
 
-
-globalConfig = passReqToCallback: true
+# Settings that apply to all logins
+globalConfig =
+  passReqToCallback: true
 
 LocalStrategy = require('passport-local').Strategy
-passport.use new LocalStrategy (email, password, next) ->
-  User.findOne { email: email }, (err, user) ->
-    return next err if err
-    unless user
-      return next null, false, { message: 'Incorrect username.' }
-    unless user.comparePassword password
-      return next null, false, { message: 'Incorrect password.' }
-    return next null, user
+passport.use new LocalStrategy _.extend(_.clone(globalConfig),
+    usernameField: 'login[email]'
+    passwordField: 'login[password]'
+  ), (req, email, password, next) ->
+    User.findOne { email: email }, (err, user) ->
+      return next err if err
+      if not user
+        next null, false, { message: 'Incorrect username.' }
+      else
+        user.comparePassword password, (err, isMatch)->
+          if not isMatch
+            return next null, false, { message: 'Incorrect password.' }
+          else
+            return next null, user
 
 
 GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
@@ -98,6 +110,21 @@ module.exports = (app) ->
     req.logout()
     res.redirect '/'
 
+  app.post '/auth/login', (req, res, next) ->
+    passport.authenticate( 'local', (err, user, info) ->
+      if err or not user
+        res.locals.message = "Login failed."
+        res.redirect '/'
+      else
+        req.login user, (err) ->
+          if err
+            next err
+          else
+            res.redirect '/'
+    ) req, res, next
+        
+
+  
   # for google
   gapiURL = 'https://www.googleapis.com/auth/'
   app.get '/auth/google', passport.authenticate('google', scope: [gapiURL+'userinfo.profile', gapiURL+'userinfo.email'])

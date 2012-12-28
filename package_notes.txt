@@ -16,6 +16,8 @@ Framework:
     for password hashing
   connect-mongo
     Use mongodb as a session store.
+  mongoskin
+    A wrapper for the mongodb drivers.
 UI:
   jade
     So much nicer than html. 
@@ -28,20 +30,22 @@ UI:
     http://visionmedia.github.com/nib/
 
 Programming:
+  async
+    For asynchronous flow control. There's billions and billions of libs to do this, but I like async the best.
+    Node uses asynch design patterns instead of threads. If you're reading or writing to disk or sending stuff over a network, you use pipes (preferred) or async (not bad).
+    https://github.com/caolan/async
   coffee-script
     Uncomplicated javascript. It compiles into javascript, and is soo much easier to read and write.
     Great docs, and the "Try Coffeescript" thing is VERY useful.
     http://coffeescript.org
   colors
     So you can console.log things in color. e.g. console.log "I'm thinking of something orange!".orange
-  async
-    For asynchronous flow control. There's billions and billions of libs to do this, but I like async the best.
-    Node uses asynch design patterns instead of threads. If you're reading or writing to disk or sending stuff over a network, you use pipes (preferred) or async (not bad).
-    https://github.com/caolan/async
-  underscore
-    Functional programming for javascript.
   connect-coffee-script
-    It just makes using coffeescript easier.
+    It automatically compiles coffeescript. It makes coffee nicer and easier.
+  hotswap
+    You write code, save it, and a second or two later, it's what the server is using. Without this you have to kill and restart the server every time you change any of its code.
+  lodash
+    Functional programming for javascript. Like underscore but better. http://lodash.com/docs
 
 
 

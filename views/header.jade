@@ -7,7 +7,7 @@
       .spacer
       - if(typeof user !== 'undefined' && user !== null)
         .account
-          a.button(href="/myacct") Logged in 
+          a.button(href="/account") Logged in 
             - if(user.name)
               | as #{user.name}
           .logout: a(href="/logout") Logout

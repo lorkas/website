@@ -1,4 +1,4 @@
-_ = require 'underscore'
+_ = require 'lodash'
 coffeescript = require 'connect-coffee-script'
 require 'colors'
 express = require 'express'

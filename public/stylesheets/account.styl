@@ -1,0 +1,47 @@
+// a.button
+//   cursor pointer
+//   border-radius corner-rounding
+//   border solid border-color 1px
+//   padding .1em .5em
+//   &:hover
+//     text-decoration none
+//     color black
+//     border-color rgba(#000, .9)
+
+#account
+  .user
+    .label
+    .value
+      // font-size .9em
+      vertical-align middle
+      display inline-block
+    .label
+      &:after
+        content ": "
+    .value
+      cursor pointer
+      position relative
+      min-width 10em
+      min-height 1.5em
+      padding-left .5em
+      padding-right @padding-left + .1
+      &:hover
+        background-color rgba(#ccc, .8)
+
+  .oauth
+    a.unlink
+      display block
+      vertical-align middle
+      text-align center
+      height 1.1em
+      width @height
+      line-height @height
+      border solid black 1px
+      border-radius @height
+      display inline-block
+      margin-left 1em
+      &:hover
+        display inline-block
+        color #000
+        background-color #e79
+        text-decoration none

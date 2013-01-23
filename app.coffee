@@ -1,3 +1,6 @@
+# use machina - https://github.com/ifandelse/machina.js - for client routing?
+
+
 _ = require 'lodash'
 coffeescript = require 'connect-coffee-script'
 require 'colors'

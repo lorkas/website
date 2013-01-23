@@ -8,8 +8,6 @@ account =
   # Inject user to the locals var so you can use it in templates and stuff.
   useUser: (req, res, next) ->
     res.locals.user = req.user
-    console.log "User:\n".blue, req.user
-    console.log "Locals:\n".blue, res.locals
     next null
 
   # Reroute home if you're not logged in.

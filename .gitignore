@@ -2,3 +2,5 @@ node_modules
 
 dump.rdb
 npm-debug.log
+
+public/stylesheets/style.css

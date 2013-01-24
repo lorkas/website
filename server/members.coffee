@@ -1,30 +1,31 @@
 module.exports =
   members: [
-    name: "Andrea Silkey"
+    name: "Courtney Brown"
+    website: 'http://www.courtney-brown.net/'
     position: "President"
+    bio: "is a composer, vocalist/accordionist, tango dancer and software developer interested in questioning the nature of performance. She has long harbored aspirations of becoming an Edward Gorey heroine, but her attempts have thus far been foiled. In lieu of her unlikely but tragic demise, she makes strange dark music and fiddles with electronics."
+  ,
+    name: "Andrea Silkey"
     bio: """
       a second year graduate student in the MFA Interdisciplinary Digital Media program, produces dance music and creates innovative digital sonic art. Her research investigates modes of interactive sound and visual art, guided by her extensive performance experience as deejay \"Sonique des Fleurs\".
     """
   ,
-    name: "Patrick McCracken"
-    position: "Vice President"
-    bio: "is a Digital Culture student, voracious reader, gamer, geek, music gourmet, and aspiring people-person."
-  ,
-    name: "Ryan Spicer"
-    position: "Technology Officer"
-    bio: "is a Media Arts and Sciences Ph.D. Candidate in the School of Arts, Media + Engineering at Arizona State University. His background is in film theory and production."
-  ,
     name: "Brent Brimhall"
     position: "Web Developer"
-    bio: "Dancer and amature musician"
+    bio: "is a contemporary dancer and software developer, currently persuing a BFA in Dance and BS in Computer Science."
   ,
     name: "Byron Lahey"
     website: "http://www.byronlahey.com"
     bio: "is a Ph.D. student in the School of Arts, Media + Engineering. He is building on his background as a mechatronic sculptor and is focusing on designing, fabricating and evaluating human interactions with tangible user interfaces."
   ,
-    name: "Courtney Brown"
-    website: 'http://www.courtney-brown.net/'
-    bio: "is a composer, vocalist/accordionist, tango dancer and software developer interested in questioning the nature of performance. She has long harbored aspirations of becoming an Edward Gorey heroine, but her attempts have thus far been foiled. In lieu of her unlikely but tragic demise, she makes strange dark music and fiddles with electronics."
+    name: "David Mikalova"
+    bio: "is currently majoring in Mathematics at ASU.  He is a Linux and free software enthusiast, is inspired by experimental electronic music, and is active in the Tempe and Phoenix cycling communities."
+  ,
+    name: "Patrick McCracken"
+    bio: "is a Digital Culture student, voracious reader, gamer, geek, music gourmet, and aspiring people-person."
+  ,
+    name: "Ryan Spicer"
+    bio: "is a Media Arts and Sciences Ph.D. Candidate in the School of Arts, Media + Engineering at Arizona State University. His background is in film theory and production."
   ]
 
   alumni: [
@@ -41,11 +42,8 @@ module.exports =
       As the director, conductor, and organizer for this troupe, she educates and encourages anyone with enthusiasm to embrace the emerging fusion between technology and sonic art.
     """
   ,
-    name: "David Mikalova"
-    bio: "is currently majoring in Mathematics at ASU.  He is a Linux and free software enthusiast, is inspired by experimental electronic music, and is active in the Tempe and Phoenix cycling communities."
-  ,
     name: "Joseph Junker"
-    bio: "is a former Computer Science and Sustainability student.  His background is primarily in programming, and his interests include generative music, data visualization, systems modelling, and vegan activism."
+    bio: "is a Computer Science and Sustainability student.  His background is primarily in programming, and his interests include generative music, data visualization, systems modelling, and vegan activism."
   ,
     name: "Julie Cruse"
     website: 'http://juliecruse.com/'
@@ -69,24 +67,6 @@ module.exports =
       """
   ]
 
-  "Moral Support": [
-    name: "Dan Trueman"
-    website: 'http://en.wikipedia.org/wiki/Dan_Trueman'
-    bio: """is Professor of Music at Princeton where he formed the first LOrk ( <a href="http://plork.cs.princeton.edu"> and has provided support for the formation of LOrkAS. </a>"""
-  ,
-    name: "Ge Wang"
-    website: 'http://en.wikipedia.org/wiki/Ge_Wang'
-    bio: "is an Assistant Professor at a href='http://ccrma.stanford.edu'> CCRMA </a> where he formed the second LOrk ( <a href='http://slork.stanford.edu'> SLOrk </a><a href='http://ccrma.stanford.edu'> CCRMA </a> where he formed the second LOrk ( <a href='http://slork.stanford.edu'> SLOrk </a> ) and has provided support for the formation of LOrkAS."
-  ,
-    name: "Perry Cook"
-    website: 'http://en.wikipedia.org/wiki/Perry_Cook'
-    bio: """is Professor Emeritas at Princeton where formed the first LOrk ( <a href="http://plork.cs.princeton.edu"> PLOrk </a>), has provided support for the formation of LOrkAS, and visits ASU to do workshops and performances with LOrkAS."""
-  ,
-    name: "Rebecca Fiebrink"
-    website: "http://www.cs.princeton.edu/%7Efiebrink/"
-    bio: "is Assistant Professor at Princeton where she helped to form the first LOrk ( <a href=\"http://plork.cs.princeton.edu/\"> PLOrk </a>) and has provided support for the formation of LOrkAS."
-  ]
-
   Contributors: [
     name: "Alex Fink"
     website: "http://www.public.asu.edu/%7Eamfink/"
@@ -108,15 +88,12 @@ module.exports =
     website: "http://www.isaacwallis.com/"
     bio: "is a designer of experimental instruments and a composer of interactive music. He is a PhD candidate in AME's Media Arts and Sciences degree."
   ,
-    name: "Kelly Phillips"
-    bio: "is on staff at the School of Arts, Media + Engineering and has been a huge supporting factor, including providing technical support, for LOrkAS."
-  ,
     name: "Nicci Lehrer"
     bio: "is a Media Arts and Sciences Ph.D student in the School of Arts, Media + Engineering at Arizona State University. Her background is in biomedical engineering and painting. She provided design support for our logos."
   ,
     name: "Nick Bryan"
     bio: "hails from <a href=\"http://ccrma.stanford.edu\"> CCRMA </a>  , was a founding member of <a href=\"http://slork.stanford.edu\"> SLOrk </a> , and has provided support for the formation of LOrkAS."
-  ,
-    name: "Tain Barszo"
-    bio: "is on staff at the School of Arts, Media + Engineering and has been a huge supporting factor, including providing technical support, for LOrkAS."
+  # ,
+  #   name: "Tain Barszo"
+  #   bio: "is on staff at the School of Arts, Media + Engineering and has been a huge supporting factor, including providing technical support, for LOrkAS."
   ]

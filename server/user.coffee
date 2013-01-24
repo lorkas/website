@@ -1,6 +1,10 @@
 # Using this auth method:
 # http://devsmash.com/blog/implementing-max-login-attempts-with-mongoose
 
+###
+# TODO: Switch to mongoskin for db access, use bilby for controller object.
+###
+
 mongoose = require 'mongoose'
 Schema = mongoose.Schema
 bcrypt = require('bcrypt')

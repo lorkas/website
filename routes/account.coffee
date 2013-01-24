@@ -1,13 +1,14 @@
 ###
 # User account actions
 ###
-_ = require 'lodash'
+lodash = require 'lodash'
 User = require "#{process.cwd()}/server/user"
 
 account =
   # Inject user to the locals var so you can use it in templates and stuff.
   useUser: (req, res, next) ->
     res.locals.user = req.user
+    res.locals.loggedIn = req.user? # since this line is awkward in jade
     next null
 
   # Reroute home if you're not logged in.
@@ -27,4 +28,4 @@ setRoutes = (app) ->
       res.render '', title: 'Create new account'
 
 # So you can require this file and have account related routed middleware.
-module.exports = _.extend setRoutes, account
+module.exports = lodash.extend setRoutes, account

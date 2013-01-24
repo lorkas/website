@@ -1,13 +1,15 @@
 #nav
-  - if(typeof user !== 'undefined' && user !== null)
+  - if(loggedIn)
     a.account(href="/account") My Account
   a(href="/") About LOrkAS
   a(href="/people") People of LOrkAS
   a(href="/performances") Performances
   a(href="/repertoire") Our Repertoire
-  a(href="/roadmap") Website Roadmap
+  - if(loggedIn)
+    a(href="/roadmap") Website Roadmap
   a(href="/press") Press
   //- Add publication
-  a(href="/contact") Contact Us
+  - if(loggedIn)
+    a(href="/contact") Contact Us
 
   include other_lorkas_links

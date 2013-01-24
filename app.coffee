@@ -1,8 +1,7 @@
 # use machina - https://github.com/ifandelse/machina.js - for client routing?
 
-
-_ = require 'lodash'
 coffeescript = require 'connect-coffee-script'
+config = require process.cwd()+'/config'
 require 'colors'
 express = require 'express'
 http = require 'http'
@@ -21,16 +20,15 @@ db = mongoose.connect 'local.host', 'lorkas'
 # db.once 'open', (args...) ->
 #   console.log 'db open', args...
 
-
 # Set up the app
 app.configure ->
-  app.set 'port', process.env.PORT || 3100
+  app.set 'port', config.port
   app.use express.favicon()
   app.use express.logger('dev')
   # app.use express.logger ':method :url - :referrer, :req[content-type] -> :res[content-type]'
-  app.use coffeescript src: "#{__dirname}/public", bare: true
+  app.use coffeescript src: process.cwd()+"/public", bare: true
 
-  app.use stylus.middleware src: "#{__dirname}/public", compile: (str, path) ->
+  app.use stylus.middleware src: process.cwd()+"/public", compile: (str, path) ->
       stylus( str).set( 'force', true).set( 'filename', path
       ).set( 'compress', false
       ).use( nib()).import( 'nib' )
@@ -50,7 +48,6 @@ app.configure ->
   app.use app.router
 
 require('./server/passport') app, passport
-
 
 # This is only used while developing
 app.configure 'development', -> app.use express.errorHandler()

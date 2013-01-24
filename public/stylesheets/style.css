@@ -143,14 +143,17 @@ h4 {
   font-size: 1.1em;
   font-weight: bolder;
 }
-h7 {
-  font-size: 1.1em;
-  font-family: 'NewsCycleRegular', Arial, sans-serif;
-  font-weight: bolder;
+h5 {
+  font-weight: bold;
 }
 h6 {
   font-size: 0.9em;
   font-weight: bold;
+}
+h7 {
+  font-size: 1.1em;
+  font-family: 'NewsCycleRegular', Arial, sans-serif;
+  font-weight: bolder;
 }
 p {
   margin-top: 0;
@@ -403,6 +406,9 @@ p {
   width: 812px;
   margin: 0 15px 1em 0;
 }
+#center h2 {
+  border-bottom: solid 1px rgba(20,80,100,0.5);
+}
 .block,
 .block-list {
   display: block;
@@ -556,17 +562,6 @@ ul.roadmap li ul:after {
 }
 #members .person {
   margin-bottom: 1em;
-  display: inline-block;
-  width: 28%;
-  height: 15em;
-  padding: 0.5em;
-  margin: 0.4em 0.5em;
-  border-top: solid 1px rgba(20,80,100,0.5);
-  border-left: solid 1px rgba(20,80,100,0.5);
-  border-right: none;
-  border-bottom: none;
-  vertical-align: top;
-  overflow: hidden;
 }
 #members .person .top,
 #members .person .labels,

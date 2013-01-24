@@ -10,4 +10,8 @@ config =
       clientID: '6da8cbc61b4b9246b899'
       clientSecret: 'e0d3b0d01f47f7248735f71a9e65a35c173eb89a'
 
+  env: 'development'
+
+config.port = if config.env is 'development' then 3100 else 19261
+
 module.exports = config

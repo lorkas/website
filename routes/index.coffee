@@ -1,23 +1,20 @@
-_ = require 'lodash'
-User = require(process.cwd()+"/server/user")
-
-members = require "#{process.cwd()}/server/members"
-
 account = require('./account')
+members = require "#{process.cwd()}/server/members"
+User = require(process.cwd()+"/server/user")
 
 module.exports = (app) ->
   app.get '*', account.useUser
 
-  app.get '/d', (req, res, next) -> debugger
+  # app.get '/d', (req, res, next) -> debugger
 
   require('./account') app
-  # require('./openid') app
 
-  app.get '/',              (req, res) -> res.render 'index',         title: 'About LOrkAS'
+  app.get '/',              (req, res) -> res.render 'about',         title: 'About LOrkAS'
   app.get '/roadmap',       (req, res) -> res.render 'roadmap',       title: 'roadmap'
   app.get '/people',        (req, res) -> res.render 'people',        short: 'People of LOrkAS', title: 'The People of LOrkAS', people: members
   app.get '/performances',  (req, res) -> res.render 'performances',  title: 'Performances'
   app.get '/repertoire',    (req, res) -> res.render 'repertoire',    short: 'Repertoire', title: 'Our Repertoire'
+  app.get '/press',         (req, res) -> res.render 'press',         title: 'Press'
   app.get '/contact',       (req, res) -> res.render 'contact',       title: 'Contact Us'
 
   app.get '*', (req, res) ->

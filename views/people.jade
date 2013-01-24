@@ -19,6 +19,7 @@ block content
 
     h2 Alumni
     - for alum in people.alumni
+      - alum.bio = null
       mixin person(alum)
 
     //-
@@ -28,4 +29,5 @@ block content
 
     h2 Contributors
     - for contributor in people['Contributors']
+      - contributor.bio = null
       mixin person(contributor)

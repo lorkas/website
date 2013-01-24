@@ -1,0 +1,89 @@
+@import functions
+.page-title
+  & > .content
+    display block
+    margin 0 auto
+    max-width content-width
+    height 4em
+    position relative
+    & > *
+      height 100%
+      & > *
+        display inline-block
+        vertical-align middle
+    .spacer
+      height 100%
+    .account
+      #login-form
+        display none
+        absolute right
+        background-color white
+        border border
+        border-radius corner-rounding
+        padding 1em 1.5em
+        .oauth
+          & > label
+            display block
+          & > a
+            text-align center
+            display inline-block
+            width 31%
+        form
+          label
+            white-space nowrap
+            display block
+            margin .1em
+            input
+              display inline-block
+              margin 0 0 0 1em
+              padding .3em
+              border border
+              size 15em .9em
+              line-height .9em
+              font-size .9em
+              font inherit
+            &.input
+              text-align right
+
+      .logout
+        absolute right
+        line-height .9em
+        font-size .9em
+        margin 0
+        padding 0
+
+    .logo
+      width 100px
+      margin 0
+      border none
+    .user
+      absolute top right
+
+  border border
+  border-top none
+  border-radius bottom corner-rounding
+  z-index 100
+  background-color white
+  margin 0 auto
+  padding 0 30px
+  min-width content-width - 60
+  max-width content-width + 200
+  position relative
+
+
+
+.tabs
+  position relative
+  & >
+    .title
+      border-bottom border
+      padding-left .8em
+      .button
+        display inline-block
+        padding 0 .8em
+        &.active
+          border border
+          border-bottom none
+          border-radius top corner-rounding
+    .content
+      position relative

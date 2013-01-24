@@ -2,7 +2,7 @@ module.exports =
   members: [
     name: "Courtney Brown"
     website: 'http://www.courtney-brown.net/'
-    position: "President"
+    position: "Director"
     bio: "is a composer, vocalist/accordionist, tango dancer and software developer interested in questioning the nature of performance. She has long harbored aspirations of becoming an Edward Gorey heroine, but her attempts have thus far been foiled. In lieu of her unlikely but tragic demise, she makes strange dark music and fiddles with electronics."
   ,
     name: "Andrea Silkey"

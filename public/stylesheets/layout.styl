@@ -1,3 +1,6 @@
+/* This file defines the oveall layout and look/feel for the site.
+ */
+
 @import functions
 
 // http://lea.verou.me/2012/04/background-attachment-local/
@@ -14,11 +17,10 @@
 // nifty styles here:
 // http://vertx.io/
 
-@import general
-@import header
-@import footer
-@import navigation
-@import account
+@import "layout/general"
+@import "layout/header"
+@import "layout/footer"
+@import "layout/navigation"
 
 .icon svg
   size 30px
@@ -45,6 +47,3 @@
       display inline-block
       width content-width - nav-width - 18
       margin 0 15px 1em 0
-
-  h2
-    border-bottom border

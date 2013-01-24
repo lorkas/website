@@ -3,4 +3,5 @@ node_modules
 dump.rdb
 npm-debug.log
 
+logs/
 public/stylesheets/style.css

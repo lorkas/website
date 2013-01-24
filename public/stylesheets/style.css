@@ -100,7 +100,7 @@ body {
 body {
   background-color: #fff;
   color: #222;
-  font: 1em/1.5 "Helvetica Neue Light", "Helvetica Neue", Arial, sans-serif;
+  font: 1em/1.7 "Helvetica Neue Light", "Helvetica Neue", Arial, sans-serif;
   font-weight: lighter;
 }
 a,
@@ -121,26 +121,31 @@ h4,
 h5,
 h6 {
   font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-  line-height: 1.2em;
-  margin: 0;
+  margin: 0 0 0.4em;
   color: #000;
 }
 h1 {
   font-size: 1.7em;
+  line-height: 1.9em;
   font-family: 'NewsCycleRegular', Arial, sans-serif;
   font-weight: lighter;
 }
 h2 {
   font-size: 1.5em;
+  line-height: 1.7em;
+  padding-bottom: margin-bottom;
+  border-bottom: solid 1px rgba(20,80,100,0.5);
   font-weight: lighter;
 }
 h3 {
   font-size: 1.3em;
+  line-height: 1.5em;
   font-family: 'NewsCycleRegular', Arial, sans-serif;
   font-weight: lighter;
 }
 h4 {
   font-size: 1.1em;
+  line-height: 1.3em;
   font-weight: bolder;
 }
 h5 {
@@ -148,15 +153,18 @@ h5 {
 }
 h6 {
   font-size: 0.9em;
+  line-height: 1.1em;
   font-weight: bold;
 }
 h7 {
   font-size: 1.1em;
+  line-height: 1.3em;
   font-family: 'NewsCycleRegular', Arial, sans-serif;
   font-weight: bolder;
 }
 p {
-  margin-top: 0;
+  margin: 0;
+  padding: 0 0 0.8em 0;
 }
 .page-title {
   border: solid 1px rgba(20,80,100,0.5);
@@ -326,46 +334,6 @@ p {
   width: 25px;
   height: 25px;
 }
-#account .user .label,
-#account .user .value {
-  vertical-align: middle;
-  display: inline-block;
-}
-#account .user .label:after {
-  content: ": ";
-}
-#account .user .value {
-  cursor: pointer;
-  position: relative;
-  min-width: 10em;
-  min-height: 1.5em;
-  height: auto !important;
-  height: 1.5em;
-  padding-left: 0.5em;
-  padding-right: 0.6em;
-}
-#account .user .value:hover {
-  background-color: rgba(204,204,204,0.8);
-}
-#account .oauth a.unlink {
-  display: block;
-  vertical-align: middle;
-  text-align: center;
-  height: 1.1em;
-  width: 1.1em;
-  line-height: 1.1em;
-  border: solid #000 1px;
-  -webkit-border-radius: 1.1em;
-  border-radius: 1.1em;
-  display: inline-block;
-  margin-left: 1em;
-}
-#account .oauth a.unlink:hover {
-  display: inline-block;
-  color: #000;
-  background-color: #e79;
-  text-decoration: none;
-}
 .icon svg {
   width: 30px;
   height: 30px;
@@ -405,9 +373,6 @@ p {
   display: inline-block;
   width: 812px;
   margin: 0 15px 1em 0;
-}
-#center h2 {
-  border-bottom: solid 1px rgba(20,80,100,0.5);
 }
 .block,
 .block-list {
@@ -559,6 +524,49 @@ ul.roadmap li ul:after {
 }
 ul.roadmap li ul:after {
   clear: both;
+}
+#account .user .label,
+#account .user .value {
+  vertical-align: middle;
+  display: inline-block;
+}
+#account .user .label:after {
+  content: ": ";
+}
+#account .user .value {
+  cursor: pointer;
+  position: relative;
+  min-width: 10em;
+  min-height: 1.5em;
+  height: auto !important;
+  height: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.6em;
+}
+#account .user .value:hover {
+  background-color: rgba(204,204,204,0.8);
+}
+#account .oauth a.unlink {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  height: 1.1em;
+  width: 1.1em;
+  line-height: 1.1em;
+  border: solid #000 1px;
+  -webkit-border-radius: 1.1em;
+  border-radius: 1.1em;
+  display: inline-block;
+  margin-left: 1em;
+}
+#account .oauth a.unlink:hover {
+  display: inline-block;
+  color: #000;
+  background-color: #e79;
+  text-decoration: none;
+}
+#recruiting img.poster {
+  width: 100%;
 }
 #members .person {
   margin-bottom: 1em;

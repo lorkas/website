@@ -1,3 +1,10 @@
+environment = switch process.env.ENV
+  when 'dev' then 'development'
+  when 'stage' then 'staging'
+  when 'test' then 'testing'
+  when 'prod' then 'production'
+  else process.env.ENV
+
 config =
   oauth:
     google:
@@ -10,7 +17,7 @@ config =
       clientID: '6da8cbc61b4b9246b899'
       clientSecret: 'e0d3b0d01f47f7248735f71a9e65a35c173eb89a'
 
-  env: 'development'
+  env: environment
 
 config.port = if config.env is 'development' then 3100 else 19261
 

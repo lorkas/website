@@ -5,7 +5,7 @@ config = require process.cwd()+'/config'
 require 'colors'
 express = require 'express'
 http = require 'http'
-mongoose = require 'mongoose'
+# mongoose = require 'mongoose'
 nib = require 'nib'
 passport = require 'passport'
 path = require 'path'
@@ -13,9 +13,9 @@ routes = require './routes'
 stylus = require 'stylus'
 
 app = express()
-MongoStore = require('connect-mongo') express
+# MongoStore = require('connect-mongo') express
 
-db = mongoose.connect 'local.host', 'lorkas'
+# db = mongoose.connect 'local.host', 'lorkas'
 # db.on 'error', console.error.bind console, 'connection error:'
 # db.once 'open', (args...) ->
 #   console.log 'db open', args...
@@ -37,9 +37,9 @@ app.configure ->
   app.use express.methodOverride()
   app.use express.cookieParser 'make this a random thing!'
   app.use express.session
-    secret: 'make this a random thing!'
-    store: new MongoStore
-      mongoose_connection: db.connections[0]
+    secret: 'AP$&U7DMK_Qj7gx!FPPX4KKCQB&dCDnLGM(qZ(wAQQvEe45L'
+    # store: new MongoStore
+    #   mongoose_connection: db.connections[0]
   app.use express.static path.join __dirname, 'public'
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'

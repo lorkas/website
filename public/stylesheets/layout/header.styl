@@ -28,23 +28,10 @@
             text-align center
             display inline-block
             width 31%
-        form
-          label
-            white-space nowrap
-            display block
-            margin .1em
-            input
-              display inline-block
-              margin 0 0 0 1em
-              padding .3em
-              border border
-              size 15em .9em
-              line-height .9em
-              font-size .9em
-              font inherit
-            &.input
-              text-align right
+        form.input
+            text-align right
 
+      .error
       .logout
         absolute right
         line-height .9em
@@ -52,12 +39,25 @@
         margin 0
         padding 0
 
+      .error
+        line-height .9em
+        width 50%
+        .name, .message
+          display inline
+        .name
+          font-weight bold
+          color #d33
+          margin-right .4em
+
+
     .logo
       width 100px
       margin 0
       border none
     .user
       absolute top right
+      text-align right
+      width 50%
 
   border border
   border-top none

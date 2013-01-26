@@ -12,8 +12,11 @@
               | as #{user.name}
           .logout: a(href="/logout") Logout
       - else
-        //-
-          .account
-            .show-login.button Login
-            include login
+        .account
+          .show-login.button Login
+          include login
+          -if(typeof error !== "undefined" && error !== null)
+            .error
+              .name Error:
+              .message= error
 

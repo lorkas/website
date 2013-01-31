@@ -5,7 +5,17 @@ content-width = 1000px
 nav-width = 170px
 font-color = #222
 
+// serif for body text
+serif-fonts = "Crimson Text", "Times New Roman", Times, serif
+// sans for titles
+sans-fonts = "Source Sans Pro", "Helvetica", "Arial", sans-serif 
+// sans-fonts = Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif
 
+/***** Some other fonts I was playing with... ******/
+// font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+// font 1em/1.4 Corbel,'Helvetica Neue',Helvetica,Arial,sans-serif
+// font 1em/1.7 "Helvetica Neue Light", "Helvetica Neue", Arial, sans-serif
+// font 1em/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif
 
 global-reset()
 
@@ -20,31 +30,27 @@ body
   @extends html
   background-color white
   color #222
-  // font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
-  // font 1em/1.4 Corbel,'Helvetica Neue',Helvetica,Arial,sans-serif
-  font 1em/1.7 "Helvetica Neue Light", "Helvetica Neue", Arial, sans-serif
+  font 1em/1.7 serif-fonts
   font-weight lighter
-
 
 a, .button
   cursor pointer
   text-decoration none
-  color #007
+  color #00a
   &:hover
     text-decoration underline
     color #44c
 
 h1, h2, h3, h4, h5, h6
-  // font 1em/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif
-  font-family Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif
-  margin 0 0 .4em
+  font-family sans-fonts
   color black
+  margin 0 0 .4em
+
 header(font-size = 1em)
   font-size font-size
   line-height font-size + .2
 h1
   header 1.7em
-  font-family 'NewsCycleRegular', Arial, sans-serif
   font-weight lighter
 h2
   header 1.5em
@@ -53,23 +59,17 @@ h2
   font-weight lighter
 h3
   header 1.3em
-  font-family 'NewsCycleRegular', Arial, sans-serif
   font-weight lighter
 h4
   header 1.1em
   font-weight bolder
 h5
-  header
+  header 1em
   font-weight bold
 h6
-  header 0.9em
-  font-weight bold
-h7
-  header 1.1em
-  font-family 'NewsCycleRegular', Arial, sans-serif
-  font-weight bolder
+  header 1em
+  font-weight normal
 
-p
-  margin 0
-  padding 0 0 .8em 0
-
+.text-block
+.description
+  padding 0 1em .8em 1em

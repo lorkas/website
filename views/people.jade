@@ -3,14 +3,14 @@ block content
   mixin person(person)
     .person
       .top
-        .name= person.name
+        h6.name= person.name
         - if(person.website)
           a.website(href="#{person.website}")
         - if(person.position)
           .position= person.position
       .labels
       - if(person.bio)
-        .bio= person.bio
+        .text-block.bio= person.bio
 
   #members
     h2 Current Members

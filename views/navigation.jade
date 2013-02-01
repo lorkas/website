@@ -1,15 +1,15 @@
 #nav
   - if(loggedIn)
-    a.account(href="/account") My Account
-  a(href="/") About LOrkAS
-  a(href="/people") People of LOrkAS
-  //- a(href="/performances") Performances
-  a(href="/repertoire") Our Repertoire
+    h6: a.account(href="/account") My Account
+  h6: a(href="/") About LOrkAS
+  h6: a(href="/people") People of LOrkAS
+  //- h6: a(href="/performances") Performances
+  h6: a(href="/repertoire") Our Repertoire
   - if(loggedIn)
-    a(href="/roadmap") Website Roadmap
-  a(href="/press") Press
-  //- a(href="/publications") Publications
+    h6: a(href="/roadmap") Website Roadmap
+  h6: a(href="/press") Press
+  //- h6: a(href="/publications") Publications
   - if(loggedIn)
-    a(href="/contact") Contact Us
+    h6: a(href="/contact") Contact Us
 
   include other_lorkas_links

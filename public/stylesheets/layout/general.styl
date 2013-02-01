@@ -30,8 +30,36 @@ body
   @extends html
   background-color white
   color #222
-  font 1em/1.7 serif-fonts
+  font 1em/1.3 serif-fonts
   font-weight lighter
+
+h1, h2, h3, h4, h5, h6
+  font-family sans-fonts
+  color black
+  margin 0 0 .2em
+
+header(font-size = 1em)
+  font-size font-size
+h1
+  header 1.7em
+  font-weight lighter
+h2
+  header 1.5em
+  border-bottom border
+  margin 0 0 .4em
+  font-weight lighter
+h3
+  header 1.4em
+  font-weight bold
+h4
+  header 1.2em
+  font-weight bold
+h5
+  header 1em
+  font-weight bold
+h6
+  header 1em
+  font-weight normal
 
 a, .button
   cursor pointer
@@ -40,36 +68,14 @@ a, .button
   &:hover
     text-decoration underline
     color #44c
+a:visited
+  color #33a
+a:active
+  color #44c
 
-h1, h2, h3, h4, h5, h6
-  font-family sans-fonts
-  color black
-  margin 0 0 .4em
-
-header(font-size = 1em)
-  font-size font-size
-  line-height font-size + .2
-h1
-  header 1.7em
-  font-weight lighter
-h2
-  header 1.5em
-  padding-bottom margin-bottom
-  border-bottom border
-  font-weight lighter
-h3
-  header 1.3em
-  font-weight lighter
-h4
-  header 1.1em
-  font-weight bolder
-h5
-  header 1em
-  font-weight bold
-h6
-  header 1em
-  font-weight normal
-
+.section
+  padding-bottom .8em
 .text-block
 .description
+  @extends .section
   padding 0 1em .8em 1em

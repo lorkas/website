@@ -3,11 +3,11 @@ block content
   mixin person(person)
     .person
       .top
-        h6.name= person.name
+        h5.name= person.name
         - if(person.website)
           a.website(href="#{person.website}")
         - if(person.position)
-          .position= person.position
+          h6.position= person.position
       .labels
       - if(person.bio)
         .text-block.bio= person.bio

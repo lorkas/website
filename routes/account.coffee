@@ -13,10 +13,10 @@ account =
 
   # Reroute home if you're not logged in.
   requireUser: (req, res, next) ->
-    if not req.user
-      res.redirect '/'
-    else
-      next null
+    # if not req.user
+    #   res.redirect '/'
+    # else
+    next null
 
 setRoutes = (app) ->
   # if app

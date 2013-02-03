@@ -14,6 +14,13 @@ module.exports =
     position: "Web Developer"
     bio: "is a contemporary dancer and software developer, currently persuing a BFA in Dance and BS in Computer Science."
   ,
+    name: "Brian Hernandez"
+    website: "http://brianhernandez.org"
+    bio: """
+      Brian Hernandez is an artist who enjoys working with video-art, collaborative live performance, and writing for large and small ensembles. His works have been selected for performance across the USA, China, and Canada.
+      He holds a B.A. in philosophy and political science from St. Mary’s University, San Antonio, TX and an M.A. in music composition, from the University of North Texas, Denton, TX.  At the University of North Texas, he studied with David Bithell,  Joseph Klein, and David Stout. 
+      Currently, he is working on his D.M.A. in interdisciplinary digital media and performance at the Herberger Institute for Design and the Arts, School of Music, at Arizona State University, Tempe, AZ, studying with Garth Paine."""
+  ,
     name: "Byron Lahey"
     website: "http://www.byronlahey.com"
     bio: "is a Ph.D. student in the School of Arts, Media + Engineering. He is building on his background as a mechatronic sculptor and is focusing on designing, fabricating and evaluating human interactions with tangible user interfaces."

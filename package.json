@@ -22,6 +22,7 @@
    ,"connect-coffee-script": "x"
    ,"connect-mongo": "x"
    ,"ender": "x"
+   ,"markdown-js": "x"
    ,"mongoose": "x"
    ,"mongoskin": "x"
    ,"lodash": "x"

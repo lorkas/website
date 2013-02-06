@@ -1,0 +1,26 @@
+extends standard_page 
+block content
+
+  mixin person-link(name)
+    a(href="/people##{name}")= name
+
+  .originals
+    h2 Performances
+    
+    .composition.performances
+      a(href="http://vimeo.com/courtneydbrown/telephonetangolorkas")
+        h5.title Telephone Tango
+        h6.subtitle Nov. 19, 2012 Performance at Katzin Hall
+      .description
+        .p Performers: 
+           mixin person-link("Courtney Brown"), 
+           mixin person-link("Ryan Spicer"), 
+           mixin person-link("Brent Brimhall"), 
+           mixin person-link("Lisa Adelaide"), 
+           mixin person-link("Patrick McCracken"), 
+           mixin person-link("Byron Lahey"), 
+           mixin person-link("Morgan Waters"), 
+           mixin person-link("Jacqueline Xinos"), 
+           mixin person-link("Kate Cleaveland"), 
+        .p This piece is a play on the parlor game "Telephone", in which participants whisper to each other phrases that gradually change in the telling.  In this case, rhythms get sent  in real-time via a networked video-game-like score to performers, and their performances are recorded and sent as graphic scores to the next player. 
+

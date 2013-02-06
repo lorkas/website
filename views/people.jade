@@ -1,7 +1,7 @@
 extends standard_page 
 block content
   mixin person(person)
-    .person
+    .person(id="#{person.name}")
       .top
         h5.name= person.name
         - if(person.website)

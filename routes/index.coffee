@@ -13,6 +13,8 @@ module.exports = (app) ->
     res.render 'roadmap', title: 'roadmap'
   app.get '/people', (req, res) ->
     res.render 'people', short: 'People of LOrkAS', title: 'The People of LOrkAS', people: members
+  app.get '/media', (req, res) ->
+    res.render 'media', title: 'Media'
   app.get '/performances', (req, res) ->
     res.render 'performances', title: 'Performances'
   app.get '/repertoire', (req, res) ->

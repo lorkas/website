@@ -99,7 +99,7 @@ body {
 }
 body {
   background-color: #fff;
-  color: #222;
+  color: #333;
   font: 1em/1.3 "Crimson Text", "Times New Roman", Times, serif;
   font-weight: lighter;
 }
@@ -144,6 +144,20 @@ a,
   cursor: pointer;
   text-decoration: none;
   color: #00a;
+}
+a h1,
+.button h1,
+a h2,
+.button h2,
+a h3,
+.button h3,
+a h4,
+.button h4,
+a h5,
+.button h5,
+a h6,
+.button h6 {
+  color: inherit;
 }
 a:hover,
 .button:hover {

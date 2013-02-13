@@ -9,6 +9,8 @@ module.exports = (app) ->
 
   app.get '/', (req, res) ->
     res.render 'about', title: 'About LOrkAS'
+  app.get '/cobra', (req, res) ->
+    res.render 'cobra', entry: '/scripts/app/cobra', title: 'cobra'
   app.get '/roadmap', (req, res) ->
     res.render 'roadmap', title: 'roadmap'
   app.get '/people', (req, res) ->

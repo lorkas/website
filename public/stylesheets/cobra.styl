@@ -1,0 +1,82 @@
+.cobra
+
+  .main
+    .section
+      vertical-align top
+      display inline-block
+      padding-right 10px
+      .signal.body-part
+        font-family sans-fonts
+        font-size 20px
+        font-weight bold
+        text-align center
+
+      .card
+        &:hover
+          .description
+            display block
+        size 110px 110px
+        border solid black 1px
+        position relative
+        .letter
+          font-family sans-fonts
+          line-height 70px
+          font-size @line-height
+          font-weight bolder
+          width 100%
+          text-align center
+        .name
+          absolute bottom 3px right 5px
+          font-family serif-fonts
+          line-height 20px
+          font-size @line-height
+        .description
+          display none
+          absolute top 50% left 100%
+          margin -50px 0 0 15px
+          min-height 50px
+          width 100%
+          padding .5em
+          background-color white
+          z-index 999
+          border solid black 1px
+          font-family serif-fonts
+          border-radius 10px
+          //   content ""
+          //   display block
+          //   border none
+          //   size 1px 
+          &:before
+            content ""
+            display block
+            absolute left -11px top 50%px
+            margin-top -11px
+            size 20px
+            background-color white
+            border-left solid black 1px
+            border-bottom solid black 1px
+            font-color background-color
+            z-index -1
+            -webkit-transform rotate(45deg)
+            transform rotate(45deg)
+
+
+      // per section & card things
+      &.head
+        .card
+          border none
+          .name
+            position relative
+            text-align center
+            absolute top 50% left
+            line-height 1.2em
+            margin-top -1.1em
+
+      &.palm
+        .card
+          border none
+          .name
+            text-align center
+            absolute top 50% left
+            line-height 1.2em
+            margin-top -1.1em

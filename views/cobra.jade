@@ -1,0 +1,112 @@
+extends layout
+
+block page
+  include header
+  #center
+      h1.title= title
+      .cobra
+        h1.title COBRA
+        
+        .group.main
+          .section.mouth
+            .signal.body-part mouth
+            .card
+              .letter P
+              .name Pool
+              .description players not playing may come in; players already playing stop or radically change the quality of what they are playing
+            .card
+              .letter R
+              .name Runner
+              .description caller selects players to come in at downbeat, others stop
+            .card
+              .letter S
+              .name Substitute
+              .description those playing must stop; those not playing must come in
+            .card
+              .letter SX
+              .name Sub Crossfade
+              .description those playing fade out while those not playing fade in
+
+          .section.nose
+            .signal.body-part nose
+            .card
+              .letter D
+              .name duos
+              .description choose someone to play with, any length, any number of times
+            .card
+              .letter T
+              .name trades
+              .description chains of traded solos by pointing, anyone can start another up	
+            .card
+              .letter E
+              .name events 1, 2 or 3
+              .description one, two or three singular sonic occurrences at will
+            .card
+              .letter B
+              .name buddies
+              .description like duos, but once
+
+
+          .section.eye
+            .signal.body-part eye
+            .card
+              .letter CT
+              .name trades	
+              .description loud, outlandish gesture, pass to anyone
+            .card
+              .letter CO
+              .name trades	
+              .description to left or right
+            .card
+              .letter 
+              .name guests	
+              .description player can draft one or more to join their turn
+
+          .section.ear
+            .signal.body-part ear
+            .card
+              .letter M&Delta;
+              .name g = g	
+              .description same group of players radically change the music at downbeat
+            .card
+              .letter G&Delta;
+              .name m = m	
+              .description players pick substitutes who try to play the same music
+            .card
+              .letter V&Delta;
+              .name volume &Delta;
+              .description crescendo, decrescendo or abrupt change as prompted
+
+          .section.head
+            .signal.body-part head
+            .card
+              .name sound memory 1	
+              .description write down what you're playing; reproduce when called
+            .card
+              .letter 
+              .name sound memory 2	
+              .description a second set
+            .card
+              .letter 
+              .name sound memory 3	
+              .description a third; any memory number can be recalled
+
+          .section.palm
+            .signal.body-part palm
+            .card
+              .name cut	
+              .description silence, as abrupt ending to the piece
+            .card
+              .name coda	
+              .description 5 to 10 second resolution, natural ending; stop on final downbeat
+            .card
+              .name hold & fade	
+              .description at downbeat, sustain your note and decay 
+
+
+
+        .group.guerilla
+          .tactics
+          .operations
+  #footer: include footer
+

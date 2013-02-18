@@ -1,0 +1,50 @@
+extends standard_page 
+block content
+  - if(!loggedIn && newUser)
+    #account
+      .p
+        .title Create a new account with this information
+        form(name="new-user", method="post", action="/auth/register")
+          label Full Name
+            - if(newUser.name)
+              input(name="account[name]", value="#{newUser.name.givenName} #{newUser.name.familyName}", type="text")
+            - else
+              input(name="account[name]", value="#{newUser.displayName}", type="text")
+
+          label Email Address
+            input(name="account[email]", value="#{newUser.emails[0].value}", type="email")
+
+          label Website
+            input(name="account[website]", type="url")
+
+          label.member Member of LOrkAS
+            input(name="login[rememberMe]", type="checkbox")
+          label.active Currently active
+            input(name="login[rememberMe]", type="checkbox")
+
+          label Password
+            input(name="account[email]", placeholder="Password", type="password")
+
+          label#bio Bio
+            .space
+            .container
+              .input(contenteditable=true, name="account[email]")
+
+          input(type="submit", value="Register")
+
+      .p
+        .title Or link to an existing account
+        form(name="login", method="post", action="/auth/login")
+          label.register
+          label.input Email
+            input(name="login[email]", type="text")
+          label.input Password
+            input(name="login[password]", type="password")
+          label Remember me
+            input(name="login[rememberMe]", type="checkbox")
+          input(type="submit", value="Link Accounts")
+
+
+
+      .code= inspect(newUser)
+      .code= Object.keys(newUser)

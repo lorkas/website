@@ -64,30 +64,61 @@ h5
 h6
   header 0.9em
   font-weight bold
-h7
+.title
   header 1.1em
   font-family 'NewsCycleRegular', Arial, sans-serif
   font-weight bolder
 
-p
+p, .p
   margin 0
   padding 0 0 .8em 0
 
 form
+  display table
+
   label
     white-space nowrap
     display block
     margin .1em
-    input
-      display inline-block
+    text-align right
+    input, .space
       margin 0 0 0 1em
-      padding .3em
-      border border
-      size 15em .9em
-      line-height .9em
-      font inherit
-      font-size .9em
-    &.input
-      text-align right
+  input, .space
+    display inline-block
+    padding .3em
+    border border
+    size 15em .9em
+    line-height .9em
+    height 1em
+    font inherit
+    font-size .9em
+    color black
+    vertical-align baseline
+  .space
+    visibility hidden
+  input[type="submit"]
+    border-radius corner-rounding
+    border solid rgba(#aaa, 1) 1px
+    padding 0 1em
+    size initial 2em
+    background-color #eee
+    &:hover
+      border-style outset
+    &:active
+      border-style inset
+  input[type="checkbox"]
+    font-size 0.95em
+    line-height 1em
+  input.inline[type="checkbox"]
+    size 1em
+    font-size 1em
+    line-height 1em
+    margin 0 1.4em 0 .8em
 
+.code
+  @extends p
+  margin-left 1em
+  font .8em/1.1 "PragmataPro", monospace
+  white-space pre
+  word-wrap break-word
 

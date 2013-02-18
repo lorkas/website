@@ -47,6 +47,10 @@ app.configure ->
   app.use passport.session()
   app.use app.router
 
+app.locals
+  inspect: require('util').inspect
+  util: require 'util'
+
 require('./server/passport') app, passport
 
 # This is only used while developing

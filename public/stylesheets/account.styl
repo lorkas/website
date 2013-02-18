@@ -9,25 +9,25 @@
 //     border-color rgba(#000, .9)
 
 #account
-  .user
-    .label
-    .value
-      // font-size .9em
-      vertical-align middle
-      display inline-block
-    .label
-      &:after
-        content ": "
-    .value
-      cursor pointer
-      position relative
-      min-width 10em
-      min-height 1.5em
-      padding-left .5em
-      padding-right @padding-left + .1
-      &:hover
-        background-color rgba(#ccc, .8)
-
+  // label
+  //   &.member
+  //   &.active
+  //     display inline-block
+  #bio
+    .container
+      height 6em
+      width 1px
+      padding 5px
+      .input
+        white-space normal
+        word-wrap break-word
+        border solid black 1px
+        padding .3em
+        width 40em
+        height 5em
+        text-align left
+        overflow scroll
+  
   .oauth
     a.unlink
       display block

@@ -25,7 +25,7 @@ setRoutes = (app) ->
     app.get '/account/oauth-associate', account.requireUser, (req, res) ->
       res.render 'associate_account', title: 'Link accounts'
     app.get '/account/register', (req, res) ->
-      res.render '', title: 'Create new account'
+      res.render 'register', title: 'Create new account', newUser: req.session.newUser
 
 # So you can require this file and have account related routed middleware.
 module.exports = lodash.extend setRoutes, account

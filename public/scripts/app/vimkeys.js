@@ -1,4 +1,6 @@
-var loadKeys;
+var loadKeys, logKeys;
+
+logKeys = function(ev) {};
 
 loadKeys = function() {
   var input, keys;
@@ -26,7 +28,7 @@ loadKeys = function() {
   input.hide();
   $('body').append(input);
   $(document).on('keyup', function(ev) {
-    console.log('up', ev.keyCode);
+    logKeys(ev);
     if (ev.keyCode === keys["delete"]) {
       debugger;
     }
@@ -38,8 +40,8 @@ loadKeys = function() {
     }
   });
   $(document).on('keypress', function(ev) {
-    console.log('press', ev.keyCode);
-    if (ev.keyCode === keys[':']) {
+    logKeys(ev);
+    if (ev.target.tagName.toLowerCase() === "body" && ev.keyCode === keys[':']) {
       ev.preventDefault();
       return input.fadeIn(100, function() {
         return input.focus();
@@ -47,8 +49,26 @@ loadKeys = function() {
     }
   });
   return $(input).on('keyup', function(ev) {
-    if (input.val() === 'login') {
-      return $(".show-login").click();
+    var email, enter, passwd, text, _ref, _ref1, _ref2;
+    enter = ev.keyCode === keys.enter;
+    text = input.val();
+    if ((/^login/.exec(text) != null) && $("#login-form").css('display') === "none") {
+      $(".show-login").click();
+    }
+    if (email = ((_ref = /^login.*-n\s*(\S*)/.exec(text)) != null ? _ref[1] : void 0) || (email = (_ref1 = /^login.*-e\s*(\S*)/.exec(text)) != null ? _ref1[1] : void 0)) {
+      if (email === "brent") {
+        email = "brent.brimhall@gmail.com";
+      }
+      $('[name="login[email]"]').val(email);
+    }
+    if (passwd = (_ref2 = /^login.*-p\s*(\S*)/.exec(text)) != null ? _ref2[1] : void 0) {
+      $(input).css("-webkit-text-security", "disc");
+      $('[name="login[password]"]').val(passwd);
+      if (ev.keyCode === keys.enter) {
+        return $('form[name="login"]').submit();
+      }
+    } else {
+      return $(input).css("-webkit-text-security", 'initial');
     }
   });
 };

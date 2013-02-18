@@ -9,10 +9,10 @@ html(lang="en")
     meta(charset="utf-8")
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="scripts/libs/head.js")
+    script(src="/scripts/libs/head.js")
     - if(typeof entry !== 'undefined' && entry !== null)
       script(src="#{entry}")
     - else
-      script(src="scripts/app/entry.js")
+      script(src="/scripts/app/entry.js")
   body
     block page

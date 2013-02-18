@@ -18,8 +18,6 @@
 
 async = require 'async'
 _ = require 'lodash'
-mongoose = require 'mongoose'
-Schema = mongoose.Schema
 
 User = require(process.cwd()+"/server/user")
 config = require(process.cwd() + '/config').oauth
@@ -37,6 +35,7 @@ passport.deserializeUser (id, next) -> User.findById id, next
 
 # This is the callback to validate oauth logins
 validateUser = (req, accessToken, refreshToken, profile, next) ->
+  res = req.res
   User.findOne { oauth: { $elemMatch: { id: profile.id }}}, (err, foundUser) ->
     loggedIn = req.user
     # continue if there's an error
@@ -51,8 +50,9 @@ validateUser = (req, accessToken, refreshToken, profile, next) ->
       # loggedIn.save next
     # If the foundUser is not logged in and the oauth account is not associated with someone, register it
     else if not loggedIn and not foundUser
+      req.session.newUser = profile
       res.redirect "/account/register"
-      throw "NIY - make a page redirect to do this!!!".red
+      # throw "NIY - make a page redirect to do this!!!".red
     # If the foundUser is logged in and the oauth acct IS already associated with an account
     else if loggedIn and foundUser
       # If it's the same one, just ignore it

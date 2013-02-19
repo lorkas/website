@@ -6,7 +6,7 @@
 
 # export ENV=dev
 if [ $ENV == "dev" ]; then
-  coffee app.coffee
+  ./node_modules/coffee-script-redux/bin/coffee app.coffee
 else
   # Just using tmux for now.. bad me.
   forever -m 30 -l logs/log.log -o logs/error.log -e logs/error.log  -c coffee app.coffee

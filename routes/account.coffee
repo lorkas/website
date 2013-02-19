@@ -42,8 +42,8 @@ setRoutes = (app) ->
           console.dir err
           console.log "/error\n".red
         else
-          req.login user, {}, (args...) ->
-            debugger
+          req.login user, ->
+            console.log "\nLogged in".blue, user, "\nwith args".blue, args
             res.redirect '/account'
 
 # So you can require this file and have account related routed middleware.

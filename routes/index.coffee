@@ -1,6 +1,5 @@
 account = require('./account')
 members = require "#{process.cwd()}/server/members"
-User = require(process.cwd()+"/server/user")
 
 module.exports = (app) ->
   app.get '*', account.useUser

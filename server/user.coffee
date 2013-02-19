@@ -14,7 +14,7 @@ LOCK_TIME = 60 * 1000
 
 UserSchema = new mongoose.Schema
   email: { type: String, index: { unique: true } }
-  password: { type: String, required: true }
+  password: { type: String }
   loginAttempts: { type: Number, required: true, default: 0 }
   lockUntil: { type: Number }
 

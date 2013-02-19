@@ -4,7 +4,7 @@ block content
     #account
       .p
         .title Create a new account with this information
-        form(name="new-user", method="post", action="/auth/register")
+        form(name="new-user", method="post", action="/account/register")
           label Full Name
             - if(newUser.name)
               input(name="account[name]", value="#{newUser.name.givenName} #{newUser.name.familyName}", type="text")
@@ -23,12 +23,12 @@ block content
             input(name="login[rememberMe]", type="checkbox")
 
           label Password
-            input(name="account[email]", placeholder="Password", type="password")
+            input(name="account[password]", placeholder="Password", type="password")
 
           label#bio Bio
             .space
             .container
-              .input(contenteditable=true, name="account[email]")
+              textarea.input(contenteditable=true, name="account[email]", styleWithCSS="true")
 
           input(type="submit", value="Register")
 

@@ -1,3 +1,7 @@
+/*
+# This script is a little silly.. it's so I can do testing by pressing ":" and typing commands.
+*/
+
 var loadKeys, logKeys;
 
 logKeys = function(ev) {};
@@ -29,9 +33,6 @@ loadKeys = function() {
   $('body').append(input);
   $(document).on('keyup', function(ev) {
     logKeys(ev);
-    if (ev.keyCode === keys["delete"]) {
-      debugger;
-    }
     if (ev.keyCode === keys.esc) {
       ev.preventDefault();
       return input.fadeOut(100, function() {
@@ -49,26 +50,29 @@ loadKeys = function() {
     }
   });
   return $(input).on('keyup', function(ev) {
-    var email, enter, passwd, text, _ref, _ref1, _ref2;
+    var email, enter, passwd, text, _ref, _ref1, _ref2, _ref3;
     enter = ev.keyCode === keys.enter;
     text = input.val();
     if ((/^login/.exec(text) != null) && $("#login-form").css('display') === "none") {
       $(".show-login").click();
     }
-    if (email = ((_ref = /^login.*-n\s*(\S*)/.exec(text)) != null ? _ref[1] : void 0) || (email = (_ref1 = /^login.*-e\s*(\S*)/.exec(text)) != null ? _ref1[1] : void 0)) {
+    if (email = ((_ref = /^login.*-n\s*(\S*)/.exec(text)) != null ? _ref[1] : void 0) || (email = ((_ref1 = /^login.*-e\s*(\S*)/.exec(text)) != null ? _ref1[1] : void 0) || (email = (_ref2 = /^login.*-u\s*(\S*)/.exec(text)) != null ? _ref2[1] : void 0))) {
       if (email === "brent") {
         email = "brent.brimhall@gmail.com";
       }
       $('[name="login[email]"]').val(email);
     }
-    if (passwd = (_ref2 = /^login.*-p\s*(\S*)/.exec(text)) != null ? _ref2[1] : void 0) {
+    if (/^login.*-p/.exec(text) != null) {
+      debugger;
       $(input).css("-webkit-text-security", "disc");
-      $('[name="login[password]"]').val(passwd);
       if (ev.keyCode === keys.enter) {
-        return $('form[name="login"]').submit();
+        $('form[name="login"]').submit();
       }
     } else {
-      return $(input).css("-webkit-text-security", 'initial');
+      $(input).css("-webkit-text-security", 'initial');
+    }
+    if (passwd = (_ref3 = /^login.*-p\s*(\S*)/.exec(text)) != null ? _ref3[1] : void 0) {
+      return $('[name="login[password]"]').val(passwd);
     }
   });
 };

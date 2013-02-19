@@ -1,4 +1,27 @@
+###
+# This script is a little silly.. it's so I can do testing by pressing ":" and typing commands.
+###
+
 logKeys = (ev) -> # console.log ev.keyCode
+
+# # this doesn't work yet...
+# command = /^(\S{0,})[$\s]/ # get the command, e.g. "grep -R" would return "grep"
+# argumentWord = /(--\w+)\s*(\S+)\s*/g
+# argumentLetter = /(-\w)\s*(\S+)\s*/g
+# argName = /^-{1,2}(\w)/ # returns "asdf" for "--asdf" or "d" for "-d"
+# window.parseArgs = (string) ->
+#   cmd = command.exec(string)?[1]
+#   args = argument.exec(string)
+#   debugger
+#   args = args.slice 1, args.length
+#   argObj = {}
+#   for test in [argumentWord, argmentLetter]
+#   while args.length > 0
+#     continue unless (arg = args.shift())?
+#     if (name = test.exec(arg)?[1])
+#       argObj[name] = args.shift()
+#   debugger
+# parseArgs "asdf -a qqwer --bigger argument"
 
 loadKeys = ->
   keys =
@@ -26,8 +49,6 @@ loadKeys = ->
 
   $(document).on 'keyup', (ev) ->
     logKeys ev
-    if ev.keyCode is keys.delete
-      debugger
     if ev.keyCode is keys.esc
       ev.preventDefault()
       input.fadeOut 100, -> input.val ''
@@ -48,16 +69,17 @@ loadKeys = ->
       $(".show-login").click()
     # get login name
     if email = /^login.*-n\s*(\S*)/.exec(text)?[1] or
-    email = /^login.*-e\s*(\S*)/.exec(text)?[1]
+    email = /^login.*-e\s*(\S*)/.exec(text)?[1] or 
+    email = /^login.*-u\s*(\S*)/.exec(text)?[1]
       if email is "brent" then email = "brent.brimhall@gmail.com"
       $('[name="login[email]"]').val email
-    if passwd = /^login.*-p\s*(\S*)/.exec(text)?[1]
+    if /^login.*-p/.exec(text)?
+      debugger
       $(input).css("-webkit-text-security","disc")
-      $('[name="login[password]"]').val passwd
       if ev.keyCode is keys.enter then $('form[name="login"]').submit()
     else
       $(input).css("-webkit-text-security",'initial')
-
-
+    if passwd = /^login.*-p\s*(\S*)/.exec(text)?[1]
+      $('[name="login[password]"]').val passwd
 
 

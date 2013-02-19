@@ -1,5 +1,6 @@
 # use machina - https://github.com/ifandelse/machina.js - for client routing?
 
+require 'source-map-support'
 coffeescript = require 'connect-coffee-script'
 config = require process.cwd()+'/config'
 require 'colors'

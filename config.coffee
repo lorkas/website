@@ -6,6 +6,10 @@ environment = switch process.env.ENV
   else process.env.ENV
 
 config =
+  # A few random strings from http://www.random.org/strings/?num=100&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new
+  sessionSecret: "slthlGgyAfGyGGM4LT9rWyWTOyMYCWdoons0toYtIhylb3n61dQ8EXdKRXQ3EWyX"
+  
+  # These are all testing accounts. Will switch to real ones and not have them on gitnub when accounts are done.
   oauth:
     google:
       clientID: "178909765835.apps.googleusercontent.com"

@@ -1,6 +1,5 @@
 # use machina - https://github.com/ifandelse/machina.js - for client routing?
 
-require 'source-map-support'
 coffeescript = require 'connect-coffee-script'
 config = require process.cwd()+'/config'
 require 'colors'
@@ -38,7 +37,7 @@ app.configure ->
   app.use express.methodOverride()
   app.use express.cookieParser 'make this a random thing!'
   app.use express.session
-    secret: 'AP$&U7DMK_Qj7gx!FPPX4KKCQB&dCDnLGM(qZ(wAQQvEe45L'
+    secret: config.sessionSecret
     # store: new MongoStore
     #   mongoose_connection: db.connections[0]
   app.use express.static path.join __dirname, 'public'

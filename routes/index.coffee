@@ -8,7 +8,7 @@ module.exports = (app) ->
   # app.get '/d', (req, res, next) -> debugger
 
   app.get '/', (req, res) ->
-    res.render 'about', title: 'About LOrkAS'
+    res.render 'index', title: 'About LOrkAS'
   app.get '/cobra', (req, res) ->
     res.render 'cobra', entry: '/scripts/app/cobra', title: 'cobra'
   app.get '/roadmap', (req, res) ->

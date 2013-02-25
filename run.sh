@@ -19,13 +19,15 @@ fi
 
 
 for arg in $@; do
-  if [ "$arg" = "-d" ]; then
-    echo "debugging"
-    DEBUG_MODE=true
-  fi
-  if [ "$arg" = "--server" ]; then
-    ENV=prod
-  fi
+  case "$arg" in
+    -d)
+      echo "debugging"
+      DEBUG_MODE=true
+      ;;
+    --server)
+      ENV=prod
+      ;;
+  esac
 done
 
 if [ $ENV == "dev" ]; then
@@ -41,9 +43,11 @@ if [ $ENV == "dev" ]; then
   # I can't get redux to use the debugger, so we use redux
   # if we don't need the debugger, regular otherwise.
   if [ -n "$NODEJS_ARG" ]; then
+    echo "Using coffeescript"
     coffee ${NODEJS_ARG} ${DEBUG_MODE} app.coffee
   else
-    ./node_modules/coffee-script-redux/bin/coffee app.coffee
+    echo "Using coffeescript redux"
+    ./node_modules/coffee-script-redux/bin/coffee --require source-map-support app.coffee
   fi
 else
   # Just using tmux for now.. bad me.

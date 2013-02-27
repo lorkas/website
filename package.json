@@ -4,8 +4,6 @@
   ,"private": true
   ,"dependencies": {
     "express": "3.0.4"
-   ,"coffee-script-redux": "x"
-   ,"source-map-support": "x"
 
    ,"passport": "x"
    ,"passport-local": "x"
@@ -27,6 +25,9 @@
    ,"mongoose": "x"
    ,"mongoskin": "x"
    ,"lodash": "x"
+  },"devDependencies": {
+   "coffee-script-redux": "x"
+   ,"source-map-support": "x"
   },"scripts": {
     "start": "coffee app.coffee"
   },"volo": {

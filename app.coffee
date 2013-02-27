@@ -7,7 +7,7 @@ express = require 'express'
 http = require 'http'
 # mongoose = require 'mongoose'
 nib = require 'nib'
-passport = require 'passport'
+# passport = require 'passport'
 path = require 'path'
 routes = require './routes'
 stylus = require 'stylus'
@@ -36,15 +36,14 @@ app.configure ->
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use express.cookieParser 'make this a random thing!'
-  # app.use express.session
-  #   secret: config.sessionSecret
+  app.use express.session secret: config.sessionSecret
   #   # store: new MongoStore
   #   #   mongoose_connection: db.connections[0]
   app.use express.static path.join __dirname, 'public'
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'
-  app.use passport.initialize()
-  app.use passport.session()
+  # app.use passport.initialize()
+  # app.use passport.session()
   app.use app.router
 
 # require('./server/passport') app, passport

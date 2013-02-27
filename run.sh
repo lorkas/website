@@ -21,7 +21,6 @@ fi
 for arg in $@; do
   case "$arg" in
     -d)
-      echo "debugging"
       DEBUG_MODE=true
       ;;
     --server)
@@ -30,29 +29,35 @@ for arg in $@; do
   esac
 done
 
-if [ $ENV == "dev" ]; then
-  if [ -n "$DEBUG_MODE" ]; then
-    DEBUG_MODE="--debug"
-    NODEJS_ARG=true
-  fi
+# Set up the run command
+if [ -n "$DEBUG_MODE" ]; then
+  echo "debugging"
+  DEBUG_MODE="--debug"
+  NODEJS_ARG=true
+fi
 
-  if [ -n "$NODEJS_ARG" ]; then
-    NODEJS_ARG="--nodejs"
-  fi
+if [ -n "$NODEJS_ARG" ]; then
+  NODEJS_ARG="--nodejs"
+fi
 
-  # I can't get redux to use the debugger, so we use redux
-  # if we don't need the debugger, regular otherwise.
+
+# Run it
+if [ $ENV == "prod" ]; then
+  # Just using tmux for now.. bad me.
+  echo "Using forever"
+  echo "forever -m 30 -l logs/log.log -o logs/error.log -e logs/error.log  -c coffee app.coffee"
+  forever -m 30 -l logs/log.log -o logs/error.log -e logs/error.log  -c coffee app.coffee
+  # nohup forever -m 30 -l logs/log.log -o logs/error.log -e logs/error.log  -c coffee app.coffee &> logs/nohup.log & 
+else
+  # I can't get redux to use the debugger, so we use redux iff we don't need the debugger.
   if [ -n "$NODEJS_ARG" ]; then
     echo "Using coffeescript"
+    echo "coffee ${NODEJS_ARG} ${DEBUG_MODE} app.coffee"
     coffee ${NODEJS_ARG} ${DEBUG_MODE} app.coffee
   else
     echo "Using coffeescript redux"
     ./node_modules/coffee-script-redux/bin/coffee --require source-map-support app.coffee
   fi
-else
-  # Just using tmux for now.. bad me.
-  forever -m 30 -l logs/log.log -o logs/error.log -e logs/error.log  -c coffee app.coffee
-  # nohup forever -m 30 -l logs/log.log -o logs/error.log -e logs/error.log  -c coffee app.coffee &> logs/nohup.log & 
 fi
 
 # SERVER="$s"

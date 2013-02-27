@@ -36,10 +36,10 @@ app.configure ->
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use express.cookieParser 'make this a random thing!'
-  app.use express.session
-    secret: config.sessionSecret
-    # store: new MongoStore
-    #   mongoose_connection: db.connections[0]
+  # app.use express.session
+  #   secret: config.sessionSecret
+  #   # store: new MongoStore
+  #   #   mongoose_connection: db.connections[0]
   app.use express.static path.join __dirname, 'public'
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'
@@ -47,7 +47,7 @@ app.configure ->
   app.use passport.session()
   app.use app.router
 
-require('./server/passport') app, passport
+# require('./server/passport') app, passport
 
 # This is only used while developing
 app.configure 'development', -> app.use express.errorHandler()

@@ -5,29 +5,29 @@
   ,"dependencies": {
     "express": "3.0.4"
 
+   ,"jade": "*"
+   ,"nib": "x"
+   ,"stylus": "x"
+
+   ,"async": "x"
+   ,"colors": "x"
+   ,"connect-coffee-script": "x"
+   ,"markdown-js": "x"
+   ,"lodash": "x"
+  },"devDependencies": {
+   "coffee-script-redux": "x"
+   ,"source-map-support": "x"
+
    ,"passport": "x"
    ,"passport-local": "x"
    ,"passport-facebook": "x"
    ,"passport-google-oauth": "x"
    ,"passport-github": "x"
 
-   ,"jade": "*"
-   ,"nib": "x"
-   ,"stylus": "x"
-
-   ,"async": "x"
    ,"bcrypt": "x"
-   ,"colors": "x"
-   ,"connect-coffee-script": "x"
    ,"connect-mongo": "x"
-   ,"ender": "x"
-   ,"markdown-js": "x"
    ,"mongoose": "x"
    ,"mongoskin": "x"
-   ,"lodash": "x"
-  },"devDependencies": {
-   "coffee-script-redux": "x"
-   ,"source-map-support": "x"
   },"scripts": {
     "start": "coffee app.coffee"
   },"volo": {

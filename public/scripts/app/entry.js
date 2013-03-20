@@ -13,8 +13,6 @@
     icons: libs + 'icons.js'
   }, {
     "_": libs + 'lodash.js'
-  }, {
-    keys: app + 'vimkeys.js'
   });
   return head.ready(function() {
     var addPaper, drawIcon, getPaper, person, speed;
@@ -78,7 +76,7 @@
         return tabs.find('.content').not(showClass).css('display', 'none');
       }
     });
-    $('.account').on('click', function(ev) {
+    return $('.account').on('click', function(ev) {
       var form, handler;
       form = $(">#login-form", ev.currentTarget);
       if ($(ev.target).hasClass('show-login')) {
@@ -97,6 +95,5 @@
         });
       }
     });
-    return loadKeys();
   });
 })();

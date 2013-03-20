@@ -1,15 +1,22 @@
 extends standard_page 
 block content
 
+  //- these *-link helpers make it so a user clicks on, for example, a person's name, and it takes them to that person on the /people page.
   mixin person-link(name)
     a(href="/people##{name}")= name
 
-  .originals
+  //- the id is the piece name, all lowercase, with "-" instead of spaces.
+  mixin repertoire-link(name, id)
+    a(href="/repertoire##{id}")= name
+
+  mixin embed-vimeo(id, title)
+    .p <iframe src="http://player.vimeo.com/video/#{id}?portrait=0" width="500" height="367" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/#{id}">#{title}</a> from <a href="http://vimeo.com/courtneydbrown">Courtney Brown</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+
+  .media
     h2 Performances
-    .composition.performances
-      a(href="http://vimeo.com/courtneydbrown/telephonetangolorkas")
-        h5.title Telephone Tango
-        h6.subtitle Nov. 19, 2012 Performance at Katzin Hall
+    .performances
+      h5.title Telephone Tango
+      h6.subtitle December 14, 2012 Performance at Katzin Hall
       .description
         .p Performers: 
            mixin person-link("Courtney Brown"), 
@@ -20,8 +27,34 @@ block content
            mixin person-link("Byron Lahey"), 
            mixin person-link("Morgan Waters"), 
            mixin person-link("Jacqueline Xinos"), 
-           mixin person-link("Kate Cleaveland"), 
-        .p
-          | <iframe src="http://player.vimeo.com/video/54329958?portrait=0" width="500" height="367" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/54329958">Telephone Tango - Laptop Orchestra of Arizona State - Nov. 19, 2012</a> from <a href="http://vimeo.com/courtneydbrown">Courtney Brown</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
-        .p This piece is a play on the parlor game "Telephone", in which participants whisper to each other phrases that gradually change in the telling.  In this case, rhythms get sent  in real-time via a networked video-game-like score to performers, and their performances are recorded and sent as graphic scores to the next player. 
+           mixin person-link("Kate Cleaveland")
+        .p Setlist: 
+          mixin repertoire-link("Telephone Tango", "telephone-tango"), 
+          mixin repertoire-link("Granite", "granite"), 
+          mixin repertoire-link("BBLVL", "bblvl"), 
+          mixin repertoire-link("Cobra", "cobra")
+        mixin embed-vimeo("62217696", "Laptop Orchestra of Arizona State performs Telephone Tango at Trunkspace")
+        mixin embed-vimeo("62217695", "Laptop Orchestra of Arizona State performs Zorn's 'Cobra'")
+        mixin embed-vimeo("62217694", "Telephone Tango Performs Perry Cook's 'BBLVL'")
+
+
+
+
+    .composition.performances
+      h5.title Telephone Tango
+      h6.subtitle November 19, 2012 Performance at Katzin Hall
+      .description
+        .p Performers: 
+           mixin person-link("Courtney Brown"), 
+           mixin person-link("Ryan Spicer"), 
+           mixin person-link("Brent Brimhall"), 
+           mixin person-link("Lisa Adelaide"), 
+           mixin person-link("Patrick McCracken"), 
+           mixin person-link("Byron Lahey"), 
+           mixin person-link("Morgan Waters"), 
+           mixin person-link("Jacqueline Xinos"), 
+           mixin person-link("Kate Cleaveland")
+        .p Setlist: 
+          mixin repertoire-link("Telephone Tango", "telephone-tango")
+        mixin embed-vimeo("54329958", "Telephone Tango - Laptop Orchestra of Arizona State - Nov. 19, 2012")
 

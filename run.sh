@@ -7,7 +7,7 @@
 
 # Parse the arguments
 
-if [ "$1" = "--update" ]; then
+if [ "$1" = "--update" or "$1" = "-u" ]; then
   echo "Updating"
   git reset --hard # removes staged and working directory changes
   git clean -f -d # remove untracked files

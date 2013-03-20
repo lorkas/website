@@ -7,7 +7,7 @@ do ->
     { jquery:   libs+"jquery.js" }
     { icons:    libs+'icons.js'}
     { "_":      libs+'lodash.js' }
-    { keys:     app+'vimkeys.js' }
+    # { keys:     app+'vimkeys.js' }
   )
 
 
@@ -68,5 +68,4 @@ do ->
           event.preventDefault()
           form.fadeOut 200
 
-    loadKeys()
 

@@ -1,9 +1,11 @@
-environment = switch process.env.ENV
-  when 'dev' then 'development'
-  when 'stage' then 'staging'
-  when 'test' then 'testing'
-  when 'prod' then 'production'
-  else process.env.ENV
+environment = switch process.env.NODE_ENV
+  when 'dev', 'development' then 'development'
+  when 'stage', 'staging' then 'staging'
+  when 'test', 'testing' then 'testing'
+  else 'production'
+
+console.log 'NODE_ENV="'.green+process.env.NODE_ENV?.blue+'"'.green
+console.log 'running as "'.green+environment?.blue+'"'.green
 
 config =
   # A few random strings from http://www.random.org/strings/?num=100&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new

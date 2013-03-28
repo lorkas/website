@@ -1,8 +1,8 @@
 # use machina - https://github.com/ifandelse/machina.js - for client routing?
 
 coffeescript = require 'connect-coffee-script'
-config = require process.cwd()+'/config'
 require 'colors'
+config = require process.cwd()+'/config'
 express = require 'express'
 http = require 'http'
 # mongoose = require 'mongoose'

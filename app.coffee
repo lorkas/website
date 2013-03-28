@@ -36,7 +36,7 @@ app.configure ->
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use express.cookieParser 'make this a random thing!'
-  app.use express.session secret: config.sessionSecret
+  # app.use express.session secret: config.sessionSecret
   #   # store: new MongoStore
   #   #   mongoose_connection: db.connections[0]
   app.use express.static path.join __dirname, 'public'

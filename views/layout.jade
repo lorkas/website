@@ -3,6 +3,29 @@
   http://pinterest.com/pin/288934132313047927/
   For performances: http://pinterest.com/pin/30117891228368694/
 
+mixin person(person)
+  .person(id="#{person.name}")
+    .top
+      h5.name= person.name
+      - if(person.website)
+        a.website(href="#{person.website}")
+      - if(person.position)
+        h6.position= person.position
+    .labels
+    - if(person.bio)
+      .text-block.bio= person.bio
+
+//- these *-link helpers make it so a user clicks on, for example, a person's name, and it takes them to that person on the /people page.
+mixin person-link(name, fullname)
+  //- use the full name if it's provided.
+  a(href="/people##{lodash.isEmpty(fullname) ? name : fullname }")= name
+
+//- the id is the piece name, all lowercase, with "-" instead of spaces.
+mixin repertoire-link(name, id)
+  a(href="/repertoire##{id}")= name
+
+
+
 doctype 5
 html(lang="en")
   head

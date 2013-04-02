@@ -48,6 +48,9 @@ app.configure ->
 
 # require('./server/passport') app, passport
 
+app.locals
+  lodash: require 'lodash'
+
 # This is only used while developing
 app.configure 'development', -> app.use express.errorHandler()
 

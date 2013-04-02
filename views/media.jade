@@ -1,14 +1,5 @@
 extends standard_page 
 block content
-
-  //- these *-link helpers make it so a user clicks on, for example, a person's name, and it takes them to that person on the /people page.
-  mixin person-link(name)
-    a(href="/people##{name}")= name
-
-  //- the id is the piece name, all lowercase, with "-" instead of spaces.
-  mixin repertoire-link(name, id)
-    a(href="/repertoire##{id}")= name
-
   mixin embed-vimeo(id, title)
     .p <iframe src="http://player.vimeo.com/video/#{id}?portrait=0" width="500" height="367" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/#{id}">#{title}</a> from <a href="http://vimeo.com/courtneydbrown">Courtney Brown</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 

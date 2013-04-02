@@ -1,5 +1,20 @@
 extends standard_page 
 block content
+  .information
+    h4
+      | Information from 
+      mixin person-link("Courtney's", "Courtney Brown")
+      |  intro to audio DSP talk
+    .description
+      .p
+        a(href="/files/Digital Audio -- Quick and Brutal.pptx") The slides from the presentation 
+        a(href="http://docs.google.com/viewer?url=http://loras.org/files/Digital Audio -- Quick and Brutal.pptx") (view online)
+        |  - Probably most useful if you were present for the talk. There are also some good links in the slides.
+      .p
+        a(href="/files/CG10-AntiAliasing.pdf") Good DSP primer on FFT, Convolution, with diagrams of common function x-forms 
+        | (for image processing but COMPLETELY relevant) -- also has a lot of good sampling notes -- on the more advanced side for that aspect. 
+        a(href="http://www.mpi-inf.mpg.de/departments/d4/teaching/ws200708/cg/slides/CG10-AntiAliasing.pdf") (from here)
+
   .notice
     h4: a(href="https://docs.google.com/spreadsheet/ccc?key=0Aq8IhvbE-gP8dERIZWlLRFBHeUNOdFNXbFp6bE5VOWc#gid=0") Sign up for a free lorkas shirt!
     .description
@@ -15,7 +30,7 @@ block content
       p: a(href="/files/workers_union_renotated.pdf") PDF score with the carnatic names for the rhythms.
       p
         a(href="/files/workers_union_score.pdf") Complete score of Worker's Union
-        via
+        |  via 
         a(href="http://www.basilicaproject.com/index.php?sub=violin") Basilica
       p: a(href="/files/rhythm_worksheet_for_lorkas.pdf") Introduction to carnatic rhythms.
   .piece

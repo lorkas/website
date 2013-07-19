@@ -1,4 +1,7 @@
+#!./node_modules/.bin/coffee
+
 # use machina - https://github.com/ifandelse/machina.js - for client routing?
+# https://github.com/mikeric/rivets - maybe rivets to bind and insert views
 
 coffeescript = require 'connect-coffee-script'
 require 'colors'
@@ -29,9 +32,9 @@ app.configure ->
   app.use coffeescript src: process.cwd()+"/public", bare: true
 
   app.use stylus.middleware src: process.cwd()+"/public", compile: (str, path) ->
-      stylus( str).set( 'force', true).set( 'filename', path
-      ).set( 'compress', false
-      ).use( nib()).import( 'nib' )
+    stylus( str).set( 'force', true).set( 'filename', path
+    ).set( 'compress', false
+    ).use( nib()).import( 'nib' )
 
   app.use express.bodyParser()
   app.use express.methodOverride()

@@ -25,6 +25,6 @@ config =
 
   env: environment
 
-config.port = if config.env is 'development' then 3100 else 19261
+config.port = if config.env is 'development' then 3200 else 19261
 
 module.exports = config

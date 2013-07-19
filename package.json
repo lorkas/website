@@ -4,7 +4,7 @@
   ,"private": true
   ,"dependencies": {
     "coffee-script": "2.0.x"
-    ,"express": "3.0.4"
+    ,"express": "4.0.4"
 
    ,"jade": "*"
    ,"nib": "x"
@@ -16,7 +16,7 @@
    ,"markdown-js": "x"
    ,"lodash": "x"
   },"devDependencies": {
-   ,"passport": "x"
+   "passport": "x"
    ,"passport-local": "x"
    ,"passport-facebook": "x"
    ,"passport-google-oauth": "x"

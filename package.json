@@ -3,6 +3,7 @@
   ,"version": "0.0.1"
   ,"private": true
   ,"dependencies": {
+    "coffee-script": "2.0.x"
     "express": "3.0.4"
 
    ,"jade": "*"
@@ -15,9 +16,6 @@
    ,"markdown-js": "x"
    ,"lodash": "x"
   },"devDependencies": {
-   "coffee-script-redux": "x"
-   ,"source-map-support": "x"
-
    ,"passport": "x"
    ,"passport-local": "x"
    ,"passport-facebook": "x"

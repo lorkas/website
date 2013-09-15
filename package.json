@@ -1,34 +1,35 @@
 {
-  "name": "application-name"
-  ,"version": "0.0.1"
-  ,"private": true
-  ,"dependencies": {
-    "coffee-script": "1.6.x"
-    ,"express": "3.0.4"
-
-   ,"jade": "*"
-   ,"nib": "x"
-   ,"stylus": "x"
-
-   ,"async": "x"
-   ,"colors": "x"
-   ,"connect-coffee-script": "x"
-   ,"markdown-js": "x"
-   ,"lodash": "x"
-  },"devDependencies": {
-   "passport": "x"
-   ,"passport-local": "x"
-   ,"passport-facebook": "x"
-   ,"passport-google-oauth": "x"
-   ,"passport-github": "x"
-
-   ,"bcrypt": "x"
-   ,"connect-mongo": "x"
-   ,"mongoose": "x"
-   ,"mongoskin": "x"
-  },"scripts": {
-    "start": "coffee app.coffee"
-  },"volo": {
+  "name": "LOrkAS_website",
+  "version": "0.0.1",
+  "private": true,
+  "notes": "Please make changes to package.coffee instead of package.json.\nRunning npm install will run the coffee file first, which overwrites the json file.\nThis is useful becasue you can add comments to coffee files, but not json files.",
+  "dependencies": {
+    "coffee-script": "1.6.x",
+    "jade": "*",
+    "nib": "x",
+    "stylus": "x",
+    "async": "x",
+    "colors": "x",
+    "connect-coffee-script": "x",
+    "markdown-js": "x",
+    "lodash": "x"
+  },
+  "devDependencies": {
+    "passport": "x",
+    "passport-local": "x",
+    "passport-facebook": "x",
+    "passport-google-oauth": "x",
+    "passport-github": "x",
+    "bcrypt": "x",
+    "connect-mongo": "x",
+    "mongoose": "x",
+    "mongoskin": "x"
+  },
+  "scripts": {
+    "start": "coffee app.coffee",
+    "preinstall": "coffee package.coffee"
+  },
+  "volo": {
     "baseDir": "public/scripts/libs",
     "dependencies": {
       "domready": "github:ded/domready/master",

@@ -1,56 +1,3 @@
-This is an explanation of all the packages used.
-All the server packages are in package.json, they are installed and updated by npm.
-All the client packages are in public/scripts. They are manually maintained. Something to automate this would be nice, but no biggie.
-
-Framework:
-  express
-    the framework for the whole site - the most popular one for node.js
-    Good api documentation: http://expressjs.com/
-    Express uses connect middleware - all the app.use stuff is middleware.
-    Connect docs are at: www.senchalabs.org/connect/
-  passport
-    it's what lets us use google, facebook, s.o., etc for logins.
-  passport-*
-    adapters for different oauth providers. passport-local is not for oauth, but just so local logins go through the same, easy interface.
-  bcrypt
-    for password hashing
-  connect-mongo
-    Use mongodb as a session store.
-  mongoskin
-    A wrapper for the mongodb drivers.
-UI:
-  jade
-    So much nicer than html. 
-    Their github page has all the docs: https://github.com/visionmedia/jade - their actual website sucks.
-  stylus
-    It makes css not suck as bad.
-    http://learnboost.github.com/stylus/
-  nib
-    Extensions for stylus.
-    http://visionmedia.github.com/nib/
-
-Programming:
-  async
-    For asynchronous flow control. There's billions and billions of libs to do this, but I like async the best.
-    Node uses asynch design patterns instead of threads. If you're reading or writing to disk or sending stuff over a network, you use pipes (preferred) or async (not bad).
-    https://github.com/caolan/async
-  coffee-script
-    Uncomplicated javascript. It compiles into javascript, and is soo much easier to read and write.
-    Great docs, and the "Try Coffeescript" thing is VERY useful.
-    http://coffeescript.org
-  colors
-    So you can console.log things in color. e.g. console.log "I'm thinking of something orange!".orange
-  connect-coffee-script
-    It automatically compiles coffeescript. It makes coffee nicer and easier.
-  hotswap
-    You write code, save it, and a second or two later, it's what the server is using. Without this you have to kill and restart the server every time you change any of its code.
-  lodash
-    Functional programming for javascript. Like underscore but better. http://lodash.com/docs
-
-
-
-
-
 Things I may pull in later, as needed:
   UI:
     bifocals
@@ -59,6 +6,7 @@ Things I may pull in later, as needed:
       animations
     jquerypp
       jquery supplement
+
   Account:
     request
       HTTP request client (get, put, post..) e.g. for oauth
